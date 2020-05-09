@@ -4,13 +4,89 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2020/05/06/hello-world/"/>
-    <url>/2020/05/06/hello-world/</url>
+    <title>解决 HBuilder (MUI) 下无法打包 iOS（使用苹果证书）的 ipa文件，适用于Xcode9</title>
+    <link href="/2018/01/15/2018011501/"/>
+    <url>/2018/01/15/2018011501/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>最近用 MUI 开发了一款跨平台的 APP 应用，除去各种坑、社区冷漠脸之外，还是挺好用的，特别是它 IDE 提供的云打包，可以一键打包 Android、ios 安装包。</p><p>但是最近打包时，一直提示 31015 编译错误，刚开始以为是官方又抽风了，因为有过前科，所以也没多想。第二天发现问题依然存在，这才意识到！！！早上出门后是不是忘记锁门了？咳咳，回到问题，几番谷歌后，发现原来是 Xcode 9 的锅。</p><p><strong>测试环境：</strong></p><p>HBuilder v.8.9.1<br>MUI<br>Xcode 9<br>Macbook Air</p><p>问题描述，使用 HBuilder 提供的云打包，ios带苹果证书。具体提示为：</p><p><code>BuildConfigure Failed 31015 编译错误 Xcode managed, but signing settings require a manually managed profile</code></p><p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/01.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/02.jpg" srcset="/img/loading.gif" alt=""></p><p>从错误提示来看，应该是 Xcode 签名配置问题，联想之前刚更新Xcode 9 ，所以搜索重点放在了 Xcode 9 签名配置上。</p><p>结果显示 Xcode 9 取消了之前的手动签名，而是改成了自动签名。下面是官方提供的解决文档：</p><p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/03.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/04.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/05.jpg" srcset="/img/loading.gif" alt=""></p><p>至此，Xcode 9 签名的问题就解决了。但是！！！由于项目中使用的是 HBuilder 提供的云打包，而打包过程中是无法操作 Xcode 9 的，所以解决方案又有些区别。</p><p>不过不用担心，既然已经知道是签名的问题，所以只要到 iOS 开发者平台上重新生成一张带自动签名的证书就行了。而这个证书就是 HBuilder 云打包所用到的 profile 文件，选择Xcode iOS Wildcard App ID（***），保存，下载。</p><p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/06.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/07.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/08.jpg" srcset="/img/loading.gif" alt=""></p><p><strong>参考链接：</strong></p><p><a href="http://www.cnblogs.com/yajunLi/p/7081150.html" target="_blank" rel="noopener">1、Xcode9新特性介绍-中文篇</a><br><a href="https://developer.apple.com/library/content/qa/qa1814/_index.html#//apple_ref/doc/uid/DTS40014030" target="_blank" rel="noopener">2、设置Xcode来自动管理您的配置文件</a><br><a href="http://help.apple.com/xcode/mac/current/#/dev23aab79b4" target="_blank" rel="noopener">3、Assign a project to a team</a></p>]]></content>
     
     
+    <categories>
+      
+      <category>开发与填坑</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MUI</tag>
+      
+      <tag>iOS</tag>
+      
+      <tag>Xcode9</tag>
+      
+      <tag>APP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《冒险村物语》评测：勇者背后的剥削者</title>
+    <link href="/2016/11/06/2016110601/"/>
+    <url>/2016/11/06/2016110601/</url>
+    
+    <content type="html"><![CDATA[<p>《冒险村物语(Dungeon Village)》是由 Kairosoft (开罗) 开发的一款模拟经营类的游戏。</p><p>Kairosoft 是一家日本手机游戏和电脑游戏的开发商，擅长开发像素风的模拟经营类游戏，比较有名有：《游戏发展国》、《财阀都市V》、《书店故事》等。</p><p>而《冒险村物语》同样延续了经典的像素风格画面和电玩风格的BGM，不同的是加入了以勇者冒险为题材的RPG元素，同样是一款能够勾起很多儿时回忆的复古游戏。</p><p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161106/01.jpg" srcset="/img/loading.gif" alt=""></p><p>还记得小时候玩的红白机吗？</p><p>在那个像素RPG游戏称霸的年代里，出现最多的便是以勇者和冒险为主题的游戏。游戏中玩家们经常会扮演着一身正气的勇者，然后几经波折，最后打败大魔王，拯救公主，从此过上了没羞没臊的生活。虽然你可能连勇者叫什么都不知道，因为也看不懂日文，同样也没什么剧情。但这却丝毫不影响你玩游戏的热情。</p><p>而这款《冒险村物语(Dungeon Village)》同样的像素风，同样的冒险主题，同样的没有剧情，但不一样的是游戏反其道而行，从一个单打独斗最多带上几个小伙伴的勇者，转变为一个厚黑的冒险村经营者。</p><p>通过建造武器店、防具店、面包店、旅店等各种设施来吸引更多的冒险者前来，而这些冒险者在你这吃喝消费的同时，还能帮助你去消灭一些野外的妖怪，为你稳固家园并带来收益，想想是不是有点小兴奋呢。</p><p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161106/02.jpg" srcset="/img/loading.gif" alt=""></p><p>对于玩家来说每天最重要的日常便是赚钱和积累人气了，毕竟这是让自己村子升级的必要条件，游戏中村子的等级分为5级，为1-5星。</p><p>当满足升星条件时，会出现过场动画，由国王授予星级勋章，每到这个时候是笔者最为开心的日子，毕竟作为一名 <del>经营</del> 剥削者升官才能更好的剥削。而赚钱的话可以通过建造一些像旅店、武器店、包子店等即可提升冒险者的实力，又可以赚取金币的建筑。</p><p>积累人气相对就比较麻烦一点，需要完成各类任务或者举行活动，人气越高，被吸引而来的冒险者也会更多。通过修建定居点可以让冒险者们留在村子，成为冒险村的居民。随着村子的一步步的发展壮大，会随机出现各类事件，为日常的生活增添一点乐趣，如打败入侵的魔王，拯救逃跑的公主之类的。</p><p>至于游戏的战斗系统，身为游戏中的剥削者，当然不需要玩家亲自去战斗，因此游戏中的战斗采用全自动的方式，玩家只要发布任务，招募勇者前去冒险就行了。完成任务后勇者也会自行升级，同时冒险所获得的宝物也会自行上交到玩家手中，万恶的资本家就是这么的爽。</p><p>当然如果不希望勇者过早的 GAMEOVER，玩家还可以通过赠送礼物的方式来强化这些冒险者，就是用他们得来上交的武器再装备给他们，而冒险者属性上升的同时，也会提高满意和勤奋度，是一笔稳赚不赔的买卖。</p><p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161106/03.jpg" srcset="/img/loading.gif" alt=""></p><p>《冒险村物语》作为一款冒险RPG模拟经营类游戏，并不是和一般的城镇经营类游戏一样，以城镇的繁华为目的，他更多的是以对冒险者的培养为核心。换句话说就是它是作为主角养殖者的存在，看着一个个本应为游戏主角的勇者们，在自己的 <del>培养</del> 剥削下，打魔王、救公主。最终成为一名传说中的勇士。不得不说游戏的创意堪称一流。</p><p>当然作为一款纯单机游戏，还是存在一些不足的。游戏中没有为玩家设定明确的目标，除了收集宝物之外，就是简单的分值计算。此外游戏中的非战斗类的职业，也没有很好的体现出来，基本和战斗类职业一样，因此显得有些鸡肋。但整体上瑕不掩瑜，还是一款诚意之作。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>游戏杂谈</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>冒险村物语</tag>
+      
+      <tag>游戏</tag>
+      
+      <tag>勇者</tag>
+      
+      <tag>经营</tag>
+      
+      <tag>评测</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>南京恋歌-四季组曲</title>
+    <link href="/2016/10/14/2016101401/"/>
+    <url>/2016/10/14/2016101401/</url>
+    
+    <content type="html"><![CDATA[<h4 id="仲夏车站"><a href="#仲夏车站" class="headerlink" title="仲夏车站"></a>仲夏车站</h4><p>期待、期待和你见面<br>在某个车站<br>可是、可是繁多的站名<br>却让我迷乱<br>飞跑的的士、旋转的时钟<br>停留、停留在那<br>可爱的脸庞前</p><hr><h4 id="秋日布丁"><a href="#秋日布丁" class="headerlink" title="秋日布丁"></a>秋日布丁</h4><p>那是秋日下的午后<br>我应你的邀请<br>踏上美妙的短暂旅途<br>那是时光里的青春<br>只有我和你<br>小小布丁，暧昧非常<br>年轻的我们<br>拥有的不只是友谊<br>还有<br>那酸涩的荷尔蒙</p><hr><h4 id="冬季府宅"><a href="#冬季府宅" class="headerlink" title="冬季府宅"></a>冬季府宅</h4><p>暖冬的阳光<br>照耀你我<br>苦涩的咖啡<br>牵引你我<br>彼此的眼眸下<br>你知我，我懂你<br>黄昏下的光辉<br>透过岁月<br>诉说民国，诉说风情<br>诉说你我</p><hr><h4 id="晴春晓别"><a href="#晴春晓别" class="headerlink" title="晴春晓别"></a>晴春晓别</h4><p>鲜花总是美艳<br>却独自凋零<br>星光总是美好<br>却终会黯然<br>牵着手、亲吻你<br>在五彩的霓虹下<br>烟花已冷、繁华落幕<br>空无的双手<br>终可拥抱春天</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗词歌赋</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>南京</tag>
+      
+    </tags>
     
   </entry>
   

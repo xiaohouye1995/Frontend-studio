@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="前端学习交流">
+  <meta name="author" content="小侯爷">
+  <meta name="keywords" content="">
+  <title>《冒险村物语》评测：勇者背后的剥削者 - 小侯爷的前端画室</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>小侯爷的前端画室</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="iconfont icon-home-fill"></i>
+              首页</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">
+              <i class="iconfont icon-archive-fill"></i>
+              归档</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">
+              <i class="iconfont icon-category-fill"></i>
+              分类</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/photo/">
+              <i class="iconfont icon-images"></i>
+              相册</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2016-11-06 16:40">
+                    2016年11月6日 下午
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    1.2k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    11
+                     分钟
+                  </span>
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>《冒险村物语(Dungeon Village)》是由 Kairosoft (开罗) 开发的一款模拟经营类的游戏。</p>
+<p>Kairosoft 是一家日本手机游戏和电脑游戏的开发商，擅长开发像素风的模拟经营类游戏，比较有名有：《游戏发展国》、《财阀都市V》、《书店故事》等。</p>
+<p>而《冒险村物语》同样延续了经典的像素风格画面和电玩风格的BGM，不同的是加入了以勇者冒险为题材的RPG元素，同样是一款能够勾起很多儿时回忆的复古游戏。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161106/01.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>还记得小时候玩的红白机吗？</p>
+<p>在那个像素RPG游戏称霸的年代里，出现最多的便是以勇者和冒险为主题的游戏。游戏中玩家们经常会扮演着一身正气的勇者，然后几经波折，最后打败大魔王，拯救公主，从此过上了没羞没臊的生活。虽然你可能连勇者叫什么都不知道，因为也看不懂日文，同样也没什么剧情。但这却丝毫不影响你玩游戏的热情。</p>
+<p>而这款《冒险村物语(Dungeon Village)》同样的像素风，同样的冒险主题，同样的没有剧情，但不一样的是游戏反其道而行，从一个单打独斗最多带上几个小伙伴的勇者，转变为一个厚黑的冒险村经营者。</p>
+<p>通过建造武器店、防具店、面包店、旅店等各种设施来吸引更多的冒险者前来，而这些冒险者在你这吃喝消费的同时，还能帮助你去消灭一些野外的妖怪，为你稳固家园并带来收益，想想是不是有点小兴奋呢。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161106/02.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>对于玩家来说每天最重要的日常便是赚钱和积累人气了，毕竟这是让自己村子升级的必要条件，游戏中村子的等级分为5级，为1-5星。</p>
+<p>当满足升星条件时，会出现过场动画，由国王授予星级勋章，每到这个时候是笔者最为开心的日子，毕竟作为一名 <del>经营</del> 剥削者升官才能更好的剥削。而赚钱的话可以通过建造一些像旅店、武器店、包子店等即可提升冒险者的实力，又可以赚取金币的建筑。</p>
+<p>积累人气相对就比较麻烦一点，需要完成各类任务或者举行活动，人气越高，被吸引而来的冒险者也会更多。通过修建定居点可以让冒险者们留在村子，成为冒险村的居民。随着村子的一步步的发展壮大，会随机出现各类事件，为日常的生活增添一点乐趣，如打败入侵的魔王，拯救逃跑的公主之类的。</p>
+<p>至于游戏的战斗系统，身为游戏中的剥削者，当然不需要玩家亲自去战斗，因此游戏中的战斗采用全自动的方式，玩家只要发布任务，招募勇者前去冒险就行了。完成任务后勇者也会自行升级，同时冒险所获得的宝物也会自行上交到玩家手中，万恶的资本家就是这么的爽。</p>
+<p>当然如果不希望勇者过早的 GAMEOVER，玩家还可以通过赠送礼物的方式来强化这些冒险者，就是用他们得来上交的武器再装备给他们，而冒险者属性上升的同时，也会提高满意和勤奋度，是一笔稳赚不赔的买卖。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161106/03.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>《冒险村物语》作为一款冒险RPG模拟经营类游戏，并不是和一般的城镇经营类游戏一样，以城镇的繁华为目的，他更多的是以对冒险者的培养为核心。换句话说就是它是作为主角养殖者的存在，看着一个个本应为游戏主角的勇者们，在自己的 <del>培养</del> 剥削下，打魔王、救公主。最终成为一名传说中的勇士。不得不说游戏的创意堪称一流。</p>
+<p>当然作为一款纯单机游戏，还是存在一些不足的。游戏中没有为玩家设定明确的目标，除了收集宝物之外，就是简单的分值计算。此外游戏中的非战斗类的职业，也没有很好的体现出来，基本和战斗类职业一样，因此显得有些鸡肋。但整体上瑕不掩瑜，还是一款诚意之作。</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/">游戏杂谈</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%86%92%E9%99%A9%E6%9D%91%E7%89%A9%E8%AF%AD/">冒险村物语</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8B%87%E8%80%85/">勇者</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%8F%E8%90%A5/">经营</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%84%E6%B5%8B/">评测</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/01/15/2018011501/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">解决 HBuilder (MUI) 下无法打包 iOS（使用苹果证书）的 ipa文件，适用于Xcode9</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2016/10/14/2016101401/">
+                        <span class="hidden-mobile">南京恋歌-四季组曲</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script defer src="https://cdn.staticfile.org/valine/1.4.14/Valine.min.js" ></script>
+
+  <script type="text/javascript">
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+
+      new Valine({
+        el: "#vcomments",
+        app_id: "Xj9NvwN7LBLvF2dqHLeRY1ix-gzGzoHsz",
+        app_key: "kYB3rhk7JSGIP0RNTvgh7HMq",
+        placeholder: "说点什么",
+        path: window.location.pathname,
+        avatar: "retro",
+        meta: ["nick","mail","link"],
+        pageSize: "10",
+        lang: "zh-CN",
+        highlight: false,
+        recordIP: false,
+        serverURLs: "",
+      });
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="#"><span>前端画室</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/zhouxiaoyu1994" target="_blank" rel="nofollow noopener">
+        <span>小侯爷</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "《冒险村物语》评测：勇者背后的剥削者&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
