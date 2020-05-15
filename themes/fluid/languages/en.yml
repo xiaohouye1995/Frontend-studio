@@ -21,6 +21,10 @@ archive:
   title: Archives
   subtitle: Archive
 
+demo:
+  title: Demos
+  subtitle: Demos
+
 tag:
   title: Tags
   subtitle: Tag

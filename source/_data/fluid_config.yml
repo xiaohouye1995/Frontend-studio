@@ -103,9 +103,10 @@ navbar:
   blog_title: 小侯爷的前端画室 # 导航栏左侧的标题，为空则按 hexo config.title 显示
   menu:  # 可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
     - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
-    - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
-    - { key: 'category', link: '/categories/', icon: 'iconfont icon-category-fill' }
-    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    # - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
+    - { key: 'demo', link: '/demo/', icon: 'iconfont icon-archive-fill' }
+    # - { key: 'category', link: '/categories/', icon: 'iconfont icon-category-fill' }
+    # - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
     - { key: 'photo', link: '/photo/', icon: 'iconfont icon-images' }
     #- { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }  # 友链页，把前面#去掉即可展示
@@ -150,7 +151,7 @@ scroll_top_arrow:  # 向顶部滚动的箭头
 # Index Page
 #---------------------------
 index:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg  # 首页 Banner 头图，以下相同
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg  # 首页 Banner 头图，以下相同
   banner_img_height: 100  # 头图高度，屏幕百分比，available: 0 - 100
   banner_mask_alpha: 0.3  # 头图黑色蒙版的透明度，available: 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明
   post_default_img: '' # 默认的文章封面图，当没有指定 index_img 时会使用该图片，若都为空则不显示任何图片
@@ -168,7 +169,7 @@ index:
 # 通过 hexo new page 命令创建的页面
 # Custom Page
 page:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg
   banner_img_height: 60  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
 
@@ -177,7 +178,7 @@ page:
 # Post Page
 #---------------------------
 post:  # 部分配置同时控制自定义页面，注意备注
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/post_banner.jpg
   banner_img_height: 70  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   meta:  # 文章标题下方的信息
@@ -302,13 +303,23 @@ archive:
   banner_img_height: 60  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  # 打字机内容
+  
+#---------------------------
+# 项目实验室
+# Archive Page
+#---------------------------
+demo:
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg
+  banner_img_height: 60  # available: 0 - 100
+  banner_mask_alpha: 0.3  # available: 0 - 1.0
+  subtitle:  # 打字机内容
 
 #---------------------------
 # 分类归档页
 # Categories Page
 #---------------------------
 category:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg
   banner_img_height: 60  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  # 打字机内容
@@ -318,7 +329,7 @@ category:
 # Tags Page
 #---------------------------
 tag:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg
   banner_img_height: 80  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  # 打字机内容
@@ -338,7 +349,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
   banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/about.jpg
   banner_img_height: 60  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
-  subtitle:  # 打字机内容
+  subtitle: '犀渠玉剑良家子，白马金羁侠少年' # 打字机内容
   avatar: /img/avatar.png # 头像
   name: 小侯爷
   introduce: 菜鸟程序猿 / 手残游戏宅 / 萌新阿婆主 # 支持 HTML
@@ -354,28 +365,18 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
 # 404 Page
 #---------------------------
 page404:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg
   banner_img_height: 85  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 'Page not found'  # 打字机内容
+
   
-#---------------------------
-# 相册
-# photo
-#---------------------------
-photo:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
-  banner_img_height: 30  # available: 0 - 100
-  banner_mask_alpha: 0.3  # available: 0 - 1.0
-  subtitle: '青春纪念册'  # 打字机内容
-
-
 #---------------------------
 # 友链页
 # Links Page
 #---------------------------
 links:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner.jpg
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_1.jpg
   banner_img_height: 60  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  # 打字机内容

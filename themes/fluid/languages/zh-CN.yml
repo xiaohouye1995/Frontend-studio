@@ -20,6 +20,10 @@ home:
 archive:
   title: 归档
   subtitle: 归档
+  
+demo:
+  title: 项目实验室
+  subtitle: 项目实验室
 
 tag:
   title: 标签

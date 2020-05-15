@@ -11,14 +11,6 @@ hexo.extend.generator.register('_404', function(locals) {
   };
 });
 
-// generate photo page
-// hexo.extend.generator.register('_photo', function(locals) {
-//   return {
-//     path  : 'photo/index.html',
-//     data  : locals.theme,
-//     layout: 'photo'
-//   };
-// });
 
 // generate tags Page
 hexo.extend.generator.register('_tags', function(locals) {

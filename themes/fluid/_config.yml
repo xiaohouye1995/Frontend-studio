@@ -299,6 +299,16 @@ archive:
   banner_img_height: 60  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  # 打字机内容
+  
+#---------------------------
+# 项目实验室
+# Archive Page
+#---------------------------
+demo:
+  banner_img: /img/default.png
+  banner_img_height: 60  # available: 0 - 100
+  banner_mask_alpha: 0.3  # available: 0 - 1.0
+  subtitle:  # 打字机内容
 
 #---------------------------
 # 分类归档页
