@@ -2,24 +2,21 @@
 title: 不登高山，不知天之高也；不临深溪，不知地之厚也
 date: 2020-05-14 19:20:33
 layout: demo
-banner_img: ![](https://frontend-studio-1256354221.file.myqcloud.com/img/demo_banner.jpeg)
+banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/demo_banner.jpg
 banner_img_height: 100
 ---
 <div class="markdown-body">
 
-# 个人项目
-### [Frontend-studio 前端画室，响应式博客](/2020/05/15/Frontend-studio/)
-### [AncientCurrencyConverter 古代银钱换算器，小程序]()
-### [tossCoin 抛硬币，小程序]()
+# 兴趣使然的无聊项目：
+### [FrontendStudio 前端画室](/2020/05/15/Frontend-studio/)
+响应式博客，随缘记录一些或重要或无聊或精彩或平淡的事情。
 
-# 企业项目
-### [轻餐饮系统，收银 + KDS划菜]()
-### [供应链系统，PC后台管理 + H5移动端]()
-### [餐饮SASS后台管理系统]()
-### [智慧餐饮，移动点餐平台]()
-### [博言榜，小程序知识付费]()
-### [创业陪跑APP，教育培训]()
-### [1688玩手游网，游戏媒体官网]()
+### [AncientCurrencyConverter 古代银钱换算器]()
+古代的一两（文、贯、钱、吊）等于现在的多少钱？当你有这个疑惑时，可以使用古代银钱换算器来进行换算。（如：清乾隆二年的一两白银 = 2019年的人民币3666.67元）。
+
+### [tossCoin 抛硬币]()
+抛硬币，并不是因为硬币能帮你决定什么，而是因为在硬币抛出的那一刻，答案便会出现在你心里。
+
 </div>
 <style>
 .markdown-body a {

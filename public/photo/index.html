@@ -76,8 +76,26 @@
           
           <li class="nav-item">
             <a class="nav-link" href="/demo/">
-              <i class="iconfont icon-archive-fill"></i>
-              项目实验室</a>
+              <i class="iconfont icon-exp-fill"></i>
+              研究室</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/game/">
+              <i class="iconfont icon-switch-fill"></i>
+              游戏堂</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/photo/">
+              <i class="iconfont icon-images"></i>
+              相册集</a>
           </li>
         
           
@@ -87,15 +105,6 @@
             <a class="nav-link" href="/about/">
               <i class="iconfont icon-user-fill"></i>
               关于</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/photo/">
-              <i class="iconfont icon-images"></i>
-              相册</a>
           </li>
         
         
@@ -148,53 +157,44 @@
 </div>
 <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
 <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
 <script>
-    // 相册数据
-    let list = [
-        {
-            title: '纸牌塔',
-            info: '九层之台，起于累土。2020.4.12.摄于杭州DOGHOUSE',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/photo/zhipai.jpg'
-        },
-        {
-            title: '西湖夜游',
-            info: '十里湖光，对南屏晚妆。2019.11.16.摄于杭州西湖',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/photo/xihuyeyou.jpg'
-        },
-        {
-            title: '蒙古郡王府',
-            info: '十年饮冰，难凉热血，那一夜我也曾梦见百万骑兵。2019.10.05.摄于鄂尔多斯郡王府',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/photo/junwangfu.jpg'
-        },
-    ]
-    // 插入html
-    let dataHtml = '';
-    for (let item of list) {
-        dataHtml += `<div class="photo-wrap"><figure>`;
-        dataHtml += `<a href="${item.imgSrc}" data-fancybox="gallery" data-width="800">`;
-        dataHtml += `<div class="photo">`;
-        dataHtml += `<div class="photo-bg" style="background-image: url(${item.imgSrc});"></div>`
-        dataHtml += `<div class="photo-info">`;
-        dataHtml += `<h1 class="photo-header">${item.title}</h1>`;
-        dataHtml += `<p class="photo-content">${item.info}</p>`;
-        dataHtml += `</div>`;
-        dataHtml += `</div>`;
-        dataHtml += `<figcaption>`;
-        dataHtml += `<h5>${item.title}</h5>`;
-        dataHtml += `<p>${item.info}</p>`;
-        dataHtml += `</figcaption>`;
-        dataHtml += `</a>`;
-        dataHtml += `</figure></div>`;
-    }
-    $('.photo-container').append(dataHtml);
-    // fancyBox 灯箱插件
-    $('[data-fancybox="gallery"]').fancybox({
-        // 设置相册介绍
-        caption: function(instance, item) {
-            return $(this).find('figcaption').html();
-        }
-    });
+    jQuery(document).ready(function ($) {
+        $.getJSON("photos.json",function(result){
+            // 相册数据
+            let list =  result.photos
+            // 插入html
+            let dataHtml = '';
+            for (let item of list) {
+                dataHtml += `<div class="photo-wrap"><figure>`;
+                dataHtml += `<a href="${item.imgSrc}" data-fancybox="gallery" data-width="800">`;
+                dataHtml += `<div class="photo">`;
+                dataHtml += `<div class="photo-bg lazy" style="background-image: url('/img/loading.gif')" data-original="${item.imgSrc}"></div>`
+                dataHtml += `<div class="photo-info">`;
+                dataHtml += `<h1 class="photo-header">${item.title}</h1>`;
+                dataHtml += `<p class="photo-content">${item.info}</p>`;
+                dataHtml += `</div>`;
+                dataHtml += `</div>`;
+                dataHtml += `<figcaption>`;
+                dataHtml += `<h5>${item.title}</h5>`;
+                dataHtml += `<p>${item.info}</p>`;
+                dataHtml += `</figcaption>`;
+                dataHtml += `</a>`;
+                dataHtml += `</figure></div>`;
+            }
+            $('.photo-container').append(dataHtml);
+            // 背景图懒加载
+            $('div.lazy').lazyload();
+            // fancyBox 灯箱插件
+            $('[data-fancybox="gallery"]').fancybox({
+                // 设置相册介绍
+                caption: function(instance, item) {
+                    return $(this).find('figcaption').html();
+                }
+            });
+        });
+    })
 </script>
 <style>
 @media (min-width: 576px) {
@@ -209,7 +209,7 @@
     }
 }
 #board {
-    background-color: #3c4858;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 figcaption {
   display: none;
