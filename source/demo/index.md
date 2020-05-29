@@ -8,14 +8,17 @@ banner_img_height: 100
 <div class="markdown-body">
 
 # 兴趣使然的无聊项目：
-### [FrontendStudio 前端画室](/2020/05/15/Frontend-studio/)
+### [FrontendStudio 前端画室](/2020/05/15/FrontendStudio/)
 响应式博客，随缘记录一些或重要或无聊或精彩或平淡的事情。
 
-### [AncientCurrencyConverter 古代银钱换算器]()
+### [AncientCurrencyConverter 古代银钱换算器](/2020/03/30/AncientCurrencyConverter/)
 古代的一两（文、贯、钱、吊）等于现在的多少钱？当你有这个疑惑时，可以使用古代银钱换算器来进行换算。（如：清乾隆二年的一两白银 = 2019年的人民币3666.67元）。
 
-### [tossCoin 抛硬币]()
+### [tossCoin 抛硬币](/2020/03/13/tossCoin/)
 抛硬币，并不是因为硬币能帮你决定什么，而是因为在硬币抛出的那一刻，答案便会出现在你心里。
+
+### [FCC 练习作品](/2016/10/20/FCC/)
+以前的一些练习作品。
 
 </div>
 <style>

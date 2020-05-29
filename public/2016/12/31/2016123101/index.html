@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="前端学习交流">
+  <meta name="author" content="小侯爷">
+  <meta name="keywords" content="">
+  <title>《最终幻想觉醒》评测：英雄幻想的延续 - 小侯爷的前端画室</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>小侯爷的前端画室</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="iconfont icon-home-fill"></i>
+              首页</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/demo/">
+              <i class="iconfont icon-exp-fill"></i>
+              研究室</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/game/">
+              <i class="iconfont icon-switch-fill"></i>
+              游戏堂</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/photo/">
+              <i class="iconfont icon-images"></i>
+              相册集</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://frontend-studio-1256354221.file.myqcloud.com/img/banner_2.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2016-12-31 00:00">
+                    2016年12月31日 凌晨
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    1.6k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    15
+                     分钟
+                  </span>
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <div class="note note-warning">
+            <p>恰饭文</p>
+          </div>
+
+<p>“要有梦想，想成为英雄的话，就一定要有梦想。”——扎克斯《最终幻想》</p>
+<p>对于绝大多数的游戏玩家来说，《最终幻想》是一个始终无法跨越的话题。也许你并没有玩过这个系列的任何一款游戏，但是你至少听过他。作为一款1987年发布的游戏，《最终幻想》系列已经走过了29个年头，发布了15部正版续作。最终幻想虽然取名为最终，但实际上它一直都没有结束或者说是放弃，属于幻想的故事一直在延续。而近日上线的《最终幻想觉醒》同样是这一故事的延续。</p>
+<h2 id="剧情与背景"><a href="#剧情与背景" class="headerlink" title="剧情与背景"></a>剧情与背景</h2><p>《最终幻想觉醒》是由史克威尔艾尼克斯正版授权，完美世界代理的移植于原作《最终幻想零式》的大型MMOARPG全CG电影手游。先说游戏剧情，因为主要是半移植的作品，所以剧情改动的并不大。</p>
+<p>游戏主要讲述的是在一个名为奥利恩斯的世界中，存在着四块拥有自我意志的水晶，和以水晶为中心建立的四个国家。分别是代表魔法的朱雀卢布卢姆，代表科技的白虎米利提斯、漂浮于空中的苍龙康科迪亚和代表坚守与防御的玄武洛里卡。后来白虎凭借着强大的魔导科技，对朱雀展开了侵略战争，并突袭了朱雀魔导学院。而主角作为学院的零班学生，于是便与白虎等势力进行战斗。</p>
+<h2 id="画面与音效"><a href="#画面与音效" class="headerlink" title="画面与音效"></a>画面与音效</h2><p>《最终幻想觉醒》的画质在手游领域应该说是业内领先的，据说游戏采用了最新研发的Orience(奥利恩斯)动画编辑引擎，结合Unity3D，融入即时渲染…….具体的专业术语我就不详细介绍了，还是来和大家分享一下游戏的实际体验。</p>
+<p>首先是游戏的开场动画，逼真的人物建模加上细腻的场景刻画，给玩家带来了动画电影的享受。虽然还比不上主机版堪称逆天的画质，但是手游中绝对可以说是顶尖的。并且更重要的是，不仅是开场拥有动画，在整个游戏的过程中都会时不时出现过场动画。据说游戏中数百部不同的CG动画，因此可以让你有一种在电影中插播游戏的感觉。</p>
+<p>其次是游戏中的捏脸系统，除了常见的脸型、发型、发色的选择之外，游戏中居然还设置了性格选项，不同性格的角色声音也是不一样的，另外值得一提的是玩家捏成的角色，不仅在游戏场景中显示，在之后的CG动画中也同样显示。</p>
+<p>游戏的主界面是在魔导学院之中，白云、城墙、喷泉之类的精致场景就不多说了，值得一提的是游戏中交互做的也非常不错，比如当玩家靠近白鸽的话，鸽子会四散飞起，只不过有一点，就是周围那充满页游风味的UI，大大减小了游戏的代入感。</p>
+<h2 id="玩法与操作"><a href="#玩法与操作" class="headerlink" title="玩法与操作"></a>玩法与操作</h2><p>《最终幻想觉醒》的操作玩法和市面上的MMOARPG一样，都是采用的是虚拟摇杆和按键，左手控制人物行走，右手点击释放技能，略微有一点不同的是虚拟摇杆采用的是触发式，当玩家没有触碰时会自动消失，这一点还是比较不错的，增大了玩家的视野。另外游戏中的闪避技能还是非常实用的，比如当敌方释放大技能时，可在瞬间躲过，并且如果在躲避的同时在发动攻击，有一定的几率会打断敌方的技能释放。</p>
+<p>游戏中提供三种职业，分别是风剑士、炎枪手还有冰魔导，各有各的特色，很难说谁强谁弱。只不过在游戏中对战斗走位的要求比较高，因此要求玩家具有一定的操作技术。当然作为国产手游，《最终幻想觉醒》同样设定了自动寻路、自动战斗玩法，有趣的是即使在自动战斗中，玩家依然可以手动释放普通技能，特殊技，以及召唤军神，这样的设置即可让玩家节省时间，又能控制的游戏的节奏，保持了游戏的乐趣。</p>
+<p>至于军神系统，实际上借鉴的《最终幻想系列》中的“召唤兽”系统，一开始玩家需要通过完成五个关卡，来获得第一个军神“奥丁”，可以帮助玩家进行战斗。除了军神之外游戏还继承了《FF零式》的小队形式。阵容里有5个位置，采用的3+2的模式，3代表实际参与战斗的人数，其中有一个是队长，并拥有队长技，2代表了替补的英雄，可以相互切换上场。</p>
+<p>除了战斗玩法之外，另一个需要介绍的就是养成系统，和目前大多数游戏一样，《最终幻想觉醒》采用的是英雄收集和养成，养成没什么好说的，无非就是升级、升星、升阶等常见元素。而作为游戏主要氪金点的英雄收集，玩家可以在游戏主界面上方的英雄召唤选项中进行召唤，当然，按照国产手游的风格，同样也有十连抽等设置。</p>
+<p>总而言之，《最终幻想觉醒》不管是从游戏画面、操作玩法还是剧情上来说，都具有一个非常高的水准。我想即便是脱离最终幻想这个IP，以及鹿晗代言的号召力，也同样是一款诚意满满的精品之作。因此不管你是FF的脑残粉还是普通玩家都大可以尝试一下。</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/">游戏杂谈</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%84%E6%B5%8B/">评测</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%80%E7%BB%88%E5%B9%BB%E6%83%B3/">最终幻想</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2017/06/18/xianjianqixiazhuan/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">《仙剑奇侠传》评测：少年郎，就当鲜衣怒马仗剑天涯</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2016/11/06/2016110601/">
+                        <span class="hidden-mobile">《冒险村物语》评测：勇者背后的剥削者</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script defer src="https://cdn.staticfile.org/valine/1.4.14/Valine.min.js" ></script>
+
+  <script type="text/javascript">
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+
+      new Valine({
+        el: "#vcomments",
+        app_id: "Xj9NvwN7LBLvF2dqHLeRY1ix-gzGzoHsz",
+        app_key: "kYB3rhk7JSGIP0RNTvgh7HMq",
+        placeholder: "说点什么",
+        path: window.location.pathname,
+        avatar: "retro",
+        meta: ["nick","mail","link"],
+        pageSize: "10",
+        lang: "zh-CN",
+        highlight: false,
+        recordIP: false,
+        serverURLs: "",
+      });
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="#"><span>前端画室</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/zhouxiaoyu1994" target="_blank" rel="nofollow noopener">
+        <span>小侯爷</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "《最终幻想觉醒》评测：英雄幻想的延续&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
