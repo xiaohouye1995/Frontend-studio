@@ -17,7 +17,7 @@
   <meta name="description" content="前端学习交流">
   <meta name="author" content="小侯爷">
   <meta name="keywords" content="">
-  <title>归档 - 小侯爷的前端画室</title>
+  <title>小侯爷的前端画室</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -46,7 +46,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -132,6 +132,10 @@
           </div>
 
           
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
         </div>
       </div>
     </div>
@@ -141,27 +145,94 @@
     
       <div class="container nopadding-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 21 篇文章</p>
-  <hr>
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2016</p>
     
-    <a href="/2016/12/31/2016123101/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">《最终幻想觉醒》评测：英雄幻想的延续</span>
-      <span style="float: right;">12-31</span>
-    </a>
-  
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2015/06/14/2015061401/">南京恋歌-四季组曲</a>
+
+      <a href="/2015/06/14/2015061401/" class="index-excerpt">
+        
+        
+          
+        
+        <div>仲夏车站期待、期待和你见面
+在某个车站
+可是、可是繁多的站名
+却让我迷乱
+飞跑的的士、旋转的时钟
+停留、停留在那
+可爱的脸庞前
+
+秋日布丁那是秋日下的午后
+我应你的邀请
+踏上美妙的短暂旅途
+那是时光里的青春
+只有我和你
+小小布丁，暧昧非常
+年轻的我们
+拥有的不只是友谊
+还有
+那酸涩的荷尔蒙
+
+冬季府宅暖冬的阳光
+照耀你我
+苦涩的咖啡
+牵引你我
+彼此的眼眸下
+你知我，我懂你
+黄昏下的光辉
+透过岁月
 </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2015-06-14
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/">诗词歌赋</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%8D%97%E4%BA%AC/">南京</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
@@ -252,7 +323,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "用艺术点亮代码，让代码改变世界&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
