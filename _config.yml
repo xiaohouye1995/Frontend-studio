@@ -13,9 +13,9 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-# url: https://zhouxiaoyu1994.github.io
+# url: https://xiaohouye1995.github.io
 # root: /
-url: https://zhouxiaoyu1994.gitee.io
+url: https://xiaohouye1995.gitee.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -101,10 +101,10 @@ theme: fluid
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   # type: 'git'
-  # repository: git@github.com:zhouxiaoyu1994/zhouxiaoyu1994.github.io.git
+  # repository: git@github.com:xiaohouye1995/xiaohouye1995.github.io.git
   # branch: master
   type: 'git'
   repo: 
-       github: git@github.com:zhouxiaoyu1994/zhouxiaoyu1994.github.io.git
-       gitee: git@gitee.com:zhouxiaoyu1994/zhouxiaoyu1994.git
+       github: git@github.com:xiaohouye1995/xiaohouye1995.github.io.git
+       gitee: git@gitee.com:xiaohouye1995/xiaohouye1995.git
   branch: master

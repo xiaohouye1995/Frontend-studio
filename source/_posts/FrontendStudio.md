@@ -18,9 +18,9 @@ tags:
 
 ### DEMO
 
-开源地址：https://github.com/zhouxiaoyu1994/Frontend-studio
-预览(国外)：https://zhouxiaoyu1994.github.io  
-预览(国内)：https://zhouxiaoyu1994.gitee.io
+开源地址：https://github.com/xiaohouye1995/Frontend-studio
+预览(国外)：https://xiaohouye1995.github.io  
+预览(国内)：https://xiaohouye1995.gitee.io
 
 ## 框架/工具
 - hexo https://hexo.io/zh-cn/

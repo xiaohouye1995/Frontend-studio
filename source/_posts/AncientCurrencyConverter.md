@@ -30,7 +30,7 @@ tags:
 ### 微信小程序码
 ![小程序码](https://frontend-studio-1256354221.file.myqcloud.com/demo/AncientCurrencyConverterWXQR.jpg)
 
-### 开源地址：https://github.com/zhouxiaoyu1994/AncientCurrencyConverter
+### 开源地址：https://github.com/xiaohouye1995/AncientCurrencyConverter
 
 ## 运行平台
 微信小程序、支付宝小程序、H5、ios、安卓

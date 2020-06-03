@@ -16,9 +16,9 @@ tags:
 
 ## DEMO
 
-### 预览地址：https://zhouxiaoyu1994.github.io/FCC/resume/index.html
+### 预览地址：https://xiaohouye1995.github.io/FCC/resume/index.html
 
-### 开源地址：https://github.com/zhouxiaoyu1994/FCC
+### 开源地址：https://github.com/xiaohouye1995/FCC
 
 ## 运行平台
 PC/mobile

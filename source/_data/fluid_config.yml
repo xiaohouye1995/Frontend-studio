@@ -238,7 +238,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
 # You can install utterances with https://utteranc.es/ and generate your configuration
 # 不稳定
 utterances:
-  repo: zhouxiaoyu1994/Frontend-studio
+  repo: xiaohouye1995/Frontend-studio
   issue_term: pathname
   label: utterances
   theme: github-light
@@ -256,7 +256,7 @@ disqus:
 gitalk:
   clientID:                    # GitHub Application Client ID
   clientSecret:               # GitHub Application Client Secret
-  repo: zhouxiaoyu1994/Frontend-studio                       # The repo to store comments
+  repo: xiaohouye1995/Frontend-studio                       # The repo to store comments
   owner: zhoixoayu1994                        # GitHub repository owner. Can be personal user or organization.
   admin: zhoixoayu1994                       # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like "['admin']" or "['admin1','admin2']"
   id: location.pathname         # The unique id of the page. Length must less than 50.
@@ -355,7 +355,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
   name: 小侯爷
   introduce: 菜鸟程序猿 / 手残游戏宅 / 萌新阿婆主 # 支持 HTML
   icons: # 更多图标可从 https://github.com/fluid-dev/static/blob/master/hexo-theme-fluid/iconfont.png 查找，class 代表图标的 css class
-    - { class: 'iconfont icon-github-fill', link: 'https://github.com/zhouxiaoyu1994' }
+    - { class: 'iconfont icon-github-fill', link: 'https://github.com/xiaohouye1995' }
     - { class: 'iconfont icon-douban-fill', link: 'https://www.douban.com/people/186027750/games?action=collect' }
     # - { class: 'iconfont icon-weibo-fill', link: 'https://weibo.com/5736438053' }
     - { class: 'iconfont icon-bilibili', link: 'https://space.bilibili.com/98212134' }

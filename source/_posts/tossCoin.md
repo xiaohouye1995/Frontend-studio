@@ -24,7 +24,7 @@ tags:
 ### 支付宝小程序码
 ![支付宝小程序码](https://frontend-studio-1256354221.file.myqcloud.com/demo/tossCoinzfbQRcode.jpg)
 
-### 开源地址：https://github.com/zhouxiaoyu1994/tossCoin
+### 开源地址：https://github.com/xiaohouye1995/tossCoin
 
 ## 运行平台
 微信小程序、支付宝小程序、H5、ios、安卓
