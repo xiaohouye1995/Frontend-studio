@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -143,7 +174,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    374 字
+                    296 字
                   </span>
                 
 
@@ -153,7 +184,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    7
+                    5
                      分钟
                   </span>
                 
@@ -183,89 +214,89 @@
             
             <article class="markdown-body">
               <p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20191120/1.gif" srcset="/img/loading.gif" alt="ezgif.com-optimize.gif"></p>
-<h3 id="html结构"><a href="#html结构" class="headerlink" title="html结构"></a>html结构</h3><pre><code class="hljs plain">&lt;div class&#x3D;&quot;assort&quot;&gt;
-    &lt;div class&#x3D;&quot;topNav&quot; id&#x3D;&quot;topNav&quot;&gt;
-      &lt;ul id&#x3D;&quot;topNavUl&quot;&gt;
-        &lt;li v-for&#x3D;&quot;(i,index) in title&quot; :key&#x3D;&quot;index&quot; @click&#x3D;&quot;goCenter(i.guid,index,$event)&quot; :class&#x3D;&quot;&#123;current: i.guid &#x3D;&#x3D;&#x3D; currentTopNav&#125;&quot;&gt;&#123;&#123; i.name &#125;&#125;&lt;&#x2F;li&gt;
-      &lt;&#x2F;ul&gt;
-    &lt;&#x2F;div&gt;
-    &lt;div&gt;内容&lt;&#x2F;div&gt;
-&lt;&#x2F;div&gt;</code></pre>
+<h3 id="html结构"><a href="#html结构" class="headerlink" title="html结构"></a>html结构</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"assort"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"topNav"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"topNav"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"topNavUl"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(i,index) in title"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"index"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"goCenter(i.guid,index,$event)"</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">"&#123;current: i.guid === currentTopNav&#125;"</span>&gt;</span>&#123;&#123; i.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>内容<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div>
 
-<h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><pre><code class="hljs plain">.topNav &#123;
-    height: 41rem &#x2F; $model;
-    background: #fff;
-    display: flex;
-    flex-flow:row nowrap; 
-    overflow: scroll;   
+<h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.topNav</span> &#123;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">41rem</span> / $model;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-flow</span>:row nowrap; 
+    <span class="hljs-attribute">overflow</span>: scroll;   
     ul &#123;
-      display: inline-block;        
-      white-space: nowrap;      
-      li &#123;
-        display: inline-block;
-        line-height: 41rem &#x2F; $model;
-        font-size: $fontS1;
-        padding: 0 10px;
+      <span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">inline-block</span>;        
+      <span class="hljs-selector-tag">white-space</span>: <span class="hljs-selector-tag">nowrap</span>;      
+      <span class="hljs-selector-tag">li</span> &#123;
+        <span class="hljs-attribute">display</span>: inline-block;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-number">41rem</span> / $model;
+        <span class="hljs-attribute">font-size</span>: $fontS1;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">10px</span>;
         &amp;:first-child &#123;
         &#125;
-        &amp;:last-child &#123;
+        &amp;<span class="hljs-selector-pseudo">:last-child</span> &#123;
         &#125;
-        &amp;.current &#123;
-          position: relative;
-          color: #66cc66;
+        &amp;<span class="hljs-selector-class">.current</span> &#123;
+          <span class="hljs-attribute">position</span>: relative;
+          <span class="hljs-attribute">color</span>: <span class="hljs-number">#66cc66</span>;
           &amp;:after &#123;
-            content: &#39;&#39;;
-            height: 4px;
-            width: 30%;
-            border-radius: 10px;
-            background-color: #66cc66;
-            position: absolute;
-            bottom: 0.15rem;
-            right: 35%;
+            content: '';
+            <span class="hljs-selector-tag">height</span>: 4<span class="hljs-selector-tag">px</span>;
+            <span class="hljs-selector-tag">width</span>: 30%;
+            <span class="hljs-selector-tag">border-radius</span>: 10<span class="hljs-selector-tag">px</span>;
+            <span class="hljs-selector-tag">background-color</span>: <span class="hljs-selector-id">#66cc66</span>;
+            <span class="hljs-selector-tag">position</span>: <span class="hljs-selector-tag">absolute</span>;
+            <span class="hljs-selector-tag">bottom</span>: 0<span class="hljs-selector-class">.15rem</span>;
+            <span class="hljs-selector-tag">right</span>: 35%;
           &#125;
         &#125;
       &#125;
     &#125;
-  &#125;</code></pre>
+  &#125;</code></pre></div>
 
-<h3 id="JS逻辑"><a href="#JS逻辑" class="headerlink" title="JS逻辑"></a>JS逻辑</h3><pre><code class="hljs plain">goCenter(guid, index, e) &#123;
-      let destination &#x3D; index - 2;
-      destination &#x3D; destination &lt; 0 ? 1 : destination;
-      this.currentTopNav &#x3D; guid;
-      if (this.navScroll) &#123;
-        this.navScroll.scrollToElement(
-          document.querySelector(&#39;#topNav li:nth-child(&#39; + destination + &#39;)&#39;)
+<h3 id="JS逻辑"><a href="#JS逻辑" class="headerlink" title="JS逻辑"></a>JS逻辑</h3><div class="hljs"><pre><code class="hljs js">goCenter(guid, index, e) &#123;
+      <span class="hljs-keyword">let</span> destination = index - <span class="hljs-number">2</span>;
+      destination = destination &lt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span> : destination;
+      <span class="hljs-keyword">this</span>.currentTopNav = guid;
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.navScroll) &#123;
+        <span class="hljs-keyword">this</span>.navScroll.scrollToElement(
+          <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#topNav li:nth-child('</span> + destination + <span class="hljs-string">')'</span>)
         );
       &#125;
-      this.getdata();
+      <span class="hljs-keyword">this</span>.getdata();
 
-      &#x2F;&#x2F; 横向滑动居中
-      let ul &#x3D; document.querySelector(&#39;#topNavUl&#39;);
-      let nav &#x3D; document.getElementById(&quot;topNav&quot;);
-      let window_offsetWidth &#x3D; window.innerWidth; &#x2F;&#x2F;屏幕宽度;
-      let dom &#x3D; e.target;
-      if (dom) &#123;
-        let domoffsetWidth &#x3D; dom.offsetLeft,
-          &#x2F;&#x2F;中间值 &#x3D;( 屏幕宽度 - li宽度 ) &#x2F; 2;
-          diffWidth &#x3D; (window_offsetWidth - dom.offsetWidth) &#x2F; 2,
-          &#x2F;&#x2F;目标值 &#x3D; offset - 中间值
-          targetOffset &#x3D; -(domoffsetWidth - diffWidth);
-        let ul_width &#x3D; ul.getBoundingClientRect().width;&#x2F;&#x2F;开始
+      <span class="hljs-comment">// 横向滑动居中</span>
+      <span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#topNavUl'</span>);
+      <span class="hljs-keyword">let</span> nav = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"topNav"</span>);
+      <span class="hljs-keyword">let</span> window_offsetWidth = <span class="hljs-built_in">window</span>.innerWidth; <span class="hljs-comment">//屏幕宽度;</span>
+      <span class="hljs-keyword">let</span> dom = e.target;
+      <span class="hljs-keyword">if</span> (dom) &#123;
+        <span class="hljs-keyword">let</span> domoffsetWidth = dom.offsetLeft,
+          <span class="hljs-comment">//中间值 =( 屏幕宽度 - li宽度 ) / 2;</span>
+          diffWidth = (window_offsetWidth - dom.offsetWidth) / <span class="hljs-number">2</span>,
+          <span class="hljs-comment">//目标值 = offset - 中间值</span>
+          targetOffset = -(domoffsetWidth - diffWidth);
+        <span class="hljs-keyword">let</span> ul_width = ul.getBoundingClientRect().width;<span class="hljs-comment">//开始</span>
         
-        &#x2F;&#x2F; 未超出中间值
-        if (-targetOffset &lt; 0) &#123;
-          nav.scrollLeft &#x3D; 0;
-          return;
+        <span class="hljs-comment">// 未超出中间值</span>
+        <span class="hljs-keyword">if</span> (-targetOffset &lt; <span class="hljs-number">0</span>) &#123;
+          nav.scrollLeft = <span class="hljs-number">0</span>;
+          <span class="hljs-keyword">return</span>;
         &#125;
-        &#x2F;&#x2F;末尾
-        if(targetOffset &lt;  window_offsetWidth - ul_width )&#123;
-          nav.scrollLeft &#x3D; -(window_offsetWidth - ul_width);
-          return;
+        <span class="hljs-comment">//末尾</span>
+        <span class="hljs-keyword">if</span>(targetOffset &lt;  window_offsetWidth - ul_width )&#123;
+          nav.scrollLeft = -(window_offsetWidth - ul_width);
+          <span class="hljs-keyword">return</span>;
         &#125;       
-        &#x2F;&#x2F;正常
-        nav.scrollLeft &#x3D; -targetOffset
+        <span class="hljs-comment">//正常</span>
+        nav.scrollLeft = -targetOffset
       &#125; 
-    &#125;,</code></pre>
+    &#125;,</code></pre></div>
             </article>
             <hr>
             <div>
@@ -555,5 +586,5 @@
 
 
 
-</body>
+  </body>
 </html>

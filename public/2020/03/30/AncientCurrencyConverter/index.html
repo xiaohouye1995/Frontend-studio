@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -223,12 +254,12 @@
 <li><input disabled="" type="checkbox"> 改名：五千年风华</li>
 <li><input disabled="" type="checkbox"> 历史今日</li>
 </ul>
-<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><h3 id="css绝对定位-absolute-居中方法"><a href="#css绝对定位-absolute-居中方法" class="headerlink" title="css绝对定位(absolute)居中方法"></a>css绝对定位(absolute)居中方法</h3><pre><code class="hljs plain">.panel &#123;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-&#125;</code></pre>
+<h2 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h2><h3 id="css绝对定位-absolute-居中方法"><a href="#css绝对定位-absolute-居中方法" class="headerlink" title="css绝对定位(absolute)居中方法"></a>css绝对定位(absolute)居中方法</h3><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.panel</span> &#123;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>,-<span class="hljs-number">50%</span>);
+&#125;</code></pre></div>
 
 <h3 id="小程序图片缓存策略"><a href="#小程序图片缓存策略" class="headerlink" title="小程序图片缓存策略"></a>小程序图片缓存策略</h3><p>服务器图片更新后，小程序本地因为缓存，导致图片没有更改。<br><a href="https://www.jianshu.com/p/65710ab69c3b" target="_blank" rel="noopener">https://www.jianshu.com/p/65710ab69c3b</a></p>
 <h2 id="资料文档"><a href="#资料文档" class="headerlink" title="资料文档"></a>资料文档</h2><p>ps: 王朝末期或战乱时，货币起伏波动较大，所以在选用朝代基础价格时，会选用朝代中较为稳定的时期。<br>引用资料：<br>王蕾：《二十世纪以来中国物价史研究述评》<a href="http://www.iqh.net.cn/info.asp?column_id=7595" target="_blank" rel="noopener">http://www.iqh.net.cn/info.asp?column_id=7595</a><br>黄冕堂：《中国历代物价问题考述》(齐鲁书社，2008)</p>
@@ -758,5 +789,5 @@
 
 
 
-</body>
+  </body>
 </html>

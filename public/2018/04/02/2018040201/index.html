@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -143,7 +174,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    388 字
+                    360 字
                   </span>
                 
 
@@ -186,75 +217,69 @@
 <h2 id="空白间距"><a href="#空白间距" class="headerlink" title="空白间距"></a>空白间距</h2><p><code>display:inline-block</code> 常被用来代替float进行页面布局，不过正所谓金无足赤、人无完人，当使用 <code>inline-block</code> 后会出现 4px 的空白间距。</p>
 <p>关于如何消除这 4px 的空白间距，网上已经有了不少方法，其中个人觉得用 <code>font-size:0</code> 解决空白间距是最为方便简单的了。</p>
 <p>下面做个简单的Demo</p>
-<pre><code class="hljs plain">.html
-&lt;body&gt;
-    &lt;div class&#x3D;&quot;a&quot;&gt;&lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&quot;b&quot;&gt;&lt;&#x2F;div&gt;
-&lt;&#x2F;body&gt;
-
-.css
-.a&#123;
-    width: 100px;
-    height: 100px;
-    background: #1c8cff;
-    display: inline-block;
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"a"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.a</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#1c8cff</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
 
 &#125;
-.b&#123;
-    width: 100px;
-    height: 100px;
-    background: #676767;
-    display: inline-block;
-&#125;</code></pre>
+<span class="hljs-selector-class">.b</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#676767</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
+&#125;</code></pre></div>
 
 <p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/1.png" srcset="/img/loading.gif" alt="Paste_Image.png"></p>
 <p>接着为两个盒子的父元素添加 <code>font-size：0</code></p>
-<pre><code class="hljs plain">body&#123;
-    font-size: 0;
-&#125;</code></pre>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre></div>
 
 <p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/2.png" srcset="/img/loading.gif" alt="Paste_Image.png"></p>
 <h2 id="元素下沉"><a href="#元素下沉" class="headerlink" title="元素下沉"></a>元素下沉</h2><p>另外，当给<code>inline-block</code>元素中添加东西时，发现其元素也会随之下沉。</p>
-<pre><code class="hljs plain">.html
-&lt;body&gt;
-    &lt;div class&#x3D;&quot;a&quot;&gt;&lt;span&gt;test&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&quot;b&quot;&gt;&lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&quot;c&quot;&gt;&lt;&#x2F;div&gt;
-&lt;&#x2F;body&gt;
-.css
-body&#123;
-    font-size: 0;
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"a"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0</span>;
 &#125;
-.a&#123;
-    width: 100px;
-    height: 100px;
-    background: #1c8cff;
-    display: inline-block;
-    font-size: 21px;
+<span class="hljs-selector-class">.a</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#1c8cff</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">21px</span>;
 &#125;
-.b&#123;
-    width: 100px;
-    height: 100px;
-    background: #676767;
-    display: inline-block;
+<span class="hljs-selector-class">.b</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#676767</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
 &#125;
-.c&#123;
-    width: 100px;
-    height: 100px;
-    background: #00a74a;
-    display: inline-block;
-&#125;</code></pre>
+<span class="hljs-selector-class">.c</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#00a74a</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
+&#125;</code></pre></div>
 
 <p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/3.png" srcset="/img/loading.gif" alt="Paste_Image.png"><br>而解决方法可以用<code>vertical-align</code>属性。</p>
-<pre><code class="hljs plain">.css
-.a&#123;
-    width: 100px;
-    height: 100px;
-    background: #1c8cff;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 21px;
-&#125;</code></pre>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.a</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#1c8cff</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">vertical-align</span>: top;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">21px</span>;
+&#125;</code></pre></div>
 
 <p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/4.png" srcset="/img/loading.gif" alt="Paste_Image.png"></p>
 
@@ -540,5 +565,5 @@ body&#123;
 
 
 
-</body>
+  </body>
 </html>

@@ -35,15 +35,16 @@ tags:
 - [x] 文章、技术、随笔、诗词
 - [x] 评论插件
 - [x] 相册集
-- [ ] 暗黑模式
+- [x] 暗黑模式
 - [x] 游戏名作堂
+- [ ] 诗词信笺模块
 
 ## 填坑
 
 ### TypeError $(...).lazyload is not a function
 在$.getJSON() 方法下使用 Query.lazyload 懒加载插件时，会导致 $() 冲突。  
 **解决方案：** 重新定义$()
-```
+```js
 jQuery(document).ready(function ($) {
 		$.getJSON("photos.json",function(result){
 			// 相册数据

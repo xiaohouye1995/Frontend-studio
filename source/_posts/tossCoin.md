@@ -140,7 +140,7 @@ url('iconfont.svg?t=1562306471309#iconfont') format('svg'); / iOS 4.1- /
 原因：支付宝小程序文字颜色和标题前景色共用一个属性
 
 解决：navigationBarBackgroundColor属性不在支付宝小程序中使用
-```
+```css
 "globalStyle": {
 	"navigationBarTextStyle": "black",
 	"navigationBarTitleText": "来抛硬币",
@@ -167,7 +167,7 @@ url('iconfont.svg?t=1562306471309#iconfont') format('svg'); / iOS 4.1- /
 
 ### 本地修改json数据
 暂时未找到方法，改为使用 setStorageSync 将json中需要修改的数据id存入本地缓存，再进入页面读取json数据时，通过双重循环来修改数据
-```
+```js
 import coinJson from '../../static/json/coin.json'
 // 获取硬币列表
 getCoinList() {
@@ -190,7 +190,7 @@ unlockCoin() {
 ```
 
 ### css绝对定位居中
-```
+```css
 .conter{
     width: 600px; height: 400px;
     position: absolute; left: 50%; top: 50%;
@@ -199,7 +199,7 @@ unlockCoin() {
 ```
 
 ### css灰度滤镜
-```
+```css
 div {
     filter: grayscale(100%);
 }

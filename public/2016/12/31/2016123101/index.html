@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -182,7 +213,10 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>“要有梦想，想成为英雄的话，就一定要有梦想。”——扎克斯《最终幻想》</p>
+              <blockquote>
+<p>恰饭向，谨慎食用</p>
+</blockquote>
+<p>“要有梦想，想成为英雄的话，就一定要有梦想。”——扎克斯《最终幻想》</p>
 <p>对于绝大多数的游戏玩家来说，《最终幻想》是一个始终无法跨越的话题。也许你并没有玩过这个系列的任何一款游戏，但是你至少听过他。作为一款1987年发布的游戏，《最终幻想》系列已经走过了29个年头，发布了15部正版续作。最终幻想虽然取名为最终，但实际上它一直都没有结束或者说是放弃，属于幻想的故事一直在延续。而近日上线的《最终幻想觉醒》同样是这一故事的延续。</p>
 <p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161231/1.jpg" srcset="/img/loading.gif" alt=""></p>
 <h2 id="剧情与背景"><a href="#剧情与背景" class="headerlink" title="剧情与背景"></a>剧情与背景</h2><p>《最终幻想觉醒》是由史克威尔艾尼克斯正版授权，完美世界代理的移植于原作《最终幻想零式》的大型MMOARPG全CG电影手游。先说游戏剧情，因为主要是半移植的作品，所以剧情改动的并不大。</p>
@@ -242,8 +276,8 @@
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2016/11/06/2016110601/">
-                        <span class="hidden-mobile">《冒险村物语》评测：勇者背后的剥削者</span>
+                      <a href="/2016/12/25/2016122501/">
+                        <span class="hidden-mobile">《追光者2》评测：虐心之作 手残勿进</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -492,5 +526,5 @@
 
 
 
-</body>
+  </body>
 </html>

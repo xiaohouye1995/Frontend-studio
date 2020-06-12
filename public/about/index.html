@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -148,7 +179,7 @@
           style=margin-top:0>
           
             <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif"
+              <img src="https://frontend-studio-1256354221.file.myqcloud.com/img/avatar.jpg" srcset="/img/loading.gif"
                    class="img-fluid" alt="avatar">
             </div>
           
@@ -191,42 +222,40 @@
   </div>
 </div>
 <div class="mt-5 markdown-body">
-  <h1 id="关于【前端画室】"><a href="#关于【前端画室】" class="headerlink" title="关于【前端画室】"></a>关于【前端画室】</h1><p>引用 <a href="https://502.li/" target="_blank" rel="noopener">502 木子</a> 的一句话：</p>
+  <h2 id="关于【前端画室】"><a href="#关于【前端画室】" class="headerlink" title="关于【前端画室】"></a>关于【前端画室】</h2><p>引用 <a href="https://502.li/" target="_blank" rel="noopener">木子</a> 的一句话：</p>
 <blockquote>
 <p>我坚信独立博客就像一艘小船在互联网的大海里自由航行，这里有我们的言论自由。这里没有删帖、没有封号。只要域名和服务器还在就会被搜索引擎检索到，会在互联网中永远地存在下去。</p>
 </blockquote>
-<p>如今的世界，流量为王，资本</p>
-<p>希望有自己的一片天地，做一些自己喜欢的无聊的事情，</p>
-<blockquote>
-<p>有多少人只顾着眼前的六便士，而忘了抬头看一看皎洁的月亮。 -毛姆《月亮与六便士》</p>
-</blockquote>
-<p>太浮躁</p>
-<p>不喜欢圆滑，不喜欢世故，知道会碰的头破血流，但义无反顾</p>
-<p>处江湖而不江湖，知世故而不世故</p>
-<p>喜欢做一些无聊的东西，没有功利。不计投入、不问后果，就想要简简单单单纯纯粹一点</p>
-<p>实名羡慕美国的车库文化，可惜没有车库。</p>
-<p>所谓前端画室，是想将自己的项目，作为一座画室展出。可惜太懒、水平又不够，就只能混吃等死喽。</p>
-<p>包括且不</p>
-<h1 id="关于【小侯爷】"><a href="#关于【小侯爷】" class="headerlink" title="关于【小侯爷】"></a>关于【小侯爷】</h1><p>见贤思齐，不贤而内自省也。</p>
-<p>人生天地间，游戏与音乐切不可辜负。</p>
-<ul>
-<li>常用ID：周小瑜、青丘木禾、羽落卿自流、小侯爷、少都督</li>
-</ul>
-<p>前端，偏全栈，UI、后端、运营、产品、视频后期</p>
-<p>佛系青年、少侠、公子</p>
-<p>很矛盾</p>
-<p>中二少年</p>
-<p>既有中二侠客的浪荡头铁又有酸腐书生的无病呻吟</p>
-<p>喜欢的运动，羽毛球、游泳</p>
-<p>爱打游戏，爱看动漫，</p>
-<p>最爱全职猎人、哆啦A梦</p>
-<p>偶尔吹吹口琴</p>
-<p>钢琴、绘画、口琴</p>
-<p>我希望，不勉强，不妥协。</p>
-<p>我希望，我喜欢你，你也喜欢我。</p>
-<p>我希望，每次见面，你能看到我眼中的星星，我能感受到你的快乐。</p>
-<p>我希望，你我如星月，夜夜流光相皎洁。</p>
-<p>Email: <a href="mailto:363993481@qq.com">363993481@qq.com</a></p>
+<p>如今的世界太过浮躁，流量为王，资本为主，娱乐至死。在这个纸醉金迷的名利场中，大家忙着赚钱啊，理财啊，娱乐啊，各种事情，很少有停下来思考的时间。渐渐的变得现实、焦虑、急功近利，迫不及待的想要成功，而迷失了自己最初的样子。所以我希望，可以有一个地方可以让自己在这名利场中停下来，用于记录、思考和创造。</p>
+<p>而这个地方，要像一张画布一样，没有限制、没有条条框框、充满自由，让自己可以在这小世界里尽情的挥洒，做一些可能无聊、可能不被认可，或者也没人看见，但自己却喜欢的事情。</p>
+<p>所以有了这里，有了<code>前端画室</code>。</p>
+<p>然而理想很丰满，现实却很骨感。前端画室最早诞生于2016年，可如今几年过去了，填充的内容却少的可伶，就连画室本身都布满了灰尘，很少更新迭代，到处散发着腐朽代码的气味。</p>
+<p>如此看来，自己也不过是这芸芸众生的一员，免不了在这名利场中迷失和同化。</p>
+<p><code>有多少人只顾着眼前的六便士，而忘了抬头看一看皎洁的月亮。 -毛姆《月亮与六便士》</code></p>
+<p>所以，当我偶尔抬头时，这里还在，前端画室还在，那就很好。</p>
+<h2 id="关于【小侯爷】"><a href="#关于【小侯爷】" class="headerlink" title="关于【小侯爷】"></a>关于【小侯爷】</h2><p>常用ID：周小瑜、青丘木禾、羽落卿自流、小侯爷</p>
+<p>小侯爷是个幼稚而又无聊的人。</p>
+<p>不喜欢圆滑，不喜欢世故，知道会碰的头破血流，但头铁无所畏惧。</p>
+<p>喜欢做一些无聊的东西，没有功利、不计投入、不问后果，就想要简简单单单纯粹一点。</p>
+<p>因为在他看来，人和机器的区别，便是人会做些无聊的事，而机器总是盯着目标，做些既定的事。而他不想变成机器。</p>
+<p>最爱游戏和动漫，首推全职猎人、哆啦A梦。</p>
+<p>偶尔会吹吹口琴、打羽毛球和游泳。</p>
+<p>如果你遇见他，麻烦帮忙转告他：开心就很好！</p>
+<div id="canvas-container">
+  <div class="pre">
+      <p>我希望</p>
+      <p>我希望，不勉强，不妥协。</p>
+      <p>我希望，每次见面，你能看到我眼中的星星，我能感受你的快乐。</p>
+      <p>我希望，你我如星月，夜夜流光相皎洁。</p>
+  </div>
+  <div id="mountains2"></div>
+  <div id="mountains1"></div>
+  <div id="skyline"></div>
+  <div class="info">试试看点击屏幕</div>
+</div>
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
+<script src="meteor.js"></script>
+<link rel="stylesheet" type="text/css" href="meteor.css" />
 
 </div>
 
@@ -378,5 +407,5 @@
 
 
 
-</body>
+  </body>
 </html>

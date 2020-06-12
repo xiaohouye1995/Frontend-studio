@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -143,7 +174,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    256 字
+                    244 字
                   </span>
                 
 
@@ -187,7 +218,7 @@
             <p>已开源</p>
           </div>
 
-<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><p>开源地址：<a href="https://github.com/xiaohouye1995/Frontend-studio" target="_blank" rel="noopener">https://github.com/xiaohouye1995/Frontend-studio</a><br>预览(国外)：<a href="https://xiaohouye1995.github.io" target="_blank" rel="noopener">https://xiaohouye1995.github.io</a><br>预览(国内)：<a href="https://xiaohouye1995.gitee.io" target="_blank" rel="noopener">https://xiaohouye1995.gitee.io</a></p>
+<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><p>开源地址：<a href="https://github.com/xiaohouye1995/Frontend-studio" target="_blank" rel="noopener">https://github.com/xiaohouye1995/Frontend-studio</a><br>预览(国外)：<a href="https://xiaohouye1995.github.io" target="_blank" rel="noopener">https://xiaohouye1995.github.io</a><br>预览(国内)：<a href="https://xiaohouye1995.gitee.io">https://xiaohouye1995.gitee.io</a></p>
 <h2 id="框架-工具"><a href="#框架-工具" class="headerlink" title="框架/工具"></a>框架/工具</h2><ul>
 <li>hexo <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></li>
 <li>hexo-theme-fluid <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">https://github.com/fluid-dev/hexo-theme-fluid</a></li>
@@ -201,22 +232,23 @@
 <li><input checked="" disabled="" type="checkbox"> 文章、技术、随笔、诗词</li>
 <li><input checked="" disabled="" type="checkbox"> 评论插件</li>
 <li><input checked="" disabled="" type="checkbox"> 相册集</li>
-<li><input disabled="" type="checkbox"> 暗黑模式</li>
+<li><input checked="" disabled="" type="checkbox"> 暗黑模式</li>
 <li><input checked="" disabled="" type="checkbox"> 游戏名作堂</li>
+<li><input disabled="" type="checkbox"> 诗词信笺模块</li>
 </ul>
 <h2 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h2><h3 id="TypeError-…-lazyload-is-not-a-function"><a href="#TypeError-…-lazyload-is-not-a-function" class="headerlink" title="TypeError $(…).lazyload is not a function"></a>TypeError $(…).lazyload is not a function</h3><p>在$.getJSON() 方法下使用 Query.lazyload 懒加载插件时，会导致 $() 冲突。<br><strong>解决方案：</strong> 重新定义$()</p>
-<pre><code class="hljs plain">jQuery(document).ready(function ($) &#123;
-		$.getJSON(&quot;photos.json&quot;,function(result)&#123;
-			&#x2F;&#x2F; 相册数据
-			let list &#x3D;  result.photos
-			console.log(&#39;list&#39;, list);
-		    &#x2F;&#x2F; 插入html
-		    let dataHtml &#x3D; &#39;&#39;;
-		    $(&#39;.photo-container&#39;).append(dataHtml);
-			&#x2F;&#x2F; 背景图懒加载
-			$(&#39;div.lazy&#39;).lazyload();
+<div class="hljs"><pre><code class="hljs js">jQuery(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$</span>) </span>&#123;
+		$.getJSON(<span class="hljs-string">"photos.json"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>)</span>&#123;
+			<span class="hljs-comment">// 相册数据</span>
+			<span class="hljs-keyword">let</span> list =  result.photos
+			<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'list'</span>, list);
+		    <span class="hljs-comment">// 插入html</span>
+		    <span class="hljs-keyword">let</span> dataHtml = <span class="hljs-string">''</span>;
+		    $(<span class="hljs-string">'.photo-container'</span>).append(dataHtml);
+			<span class="hljs-comment">// 背景图懒加载</span>
+			$(<span class="hljs-string">'div.lazy'</span>).lazyload();
 		&#125;);
-	&#125;)</code></pre>
+	&#125;)</code></pre></div>
             </article>
             <hr>
             <div>
@@ -506,5 +538,5 @@
 
 
 
-</body>
+  </body>
 </html>

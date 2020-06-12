@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -167,28 +198,28 @@
 <p><img src="https://img1.doubanio.com/lpic/s29225757.jpg" srcset="/img/loading.gif" alt="仙剑奇侠传"><br>类别：角色扮演<br>平台：PC<br>简介：《仙剑奇侠传》系列是由中国台湾大宇资讯股份有限公司（简称“大宇资讯”或“大宇”）制作发行的电脑游戏，故事以中国古代的仙妖神鬼传说为背景、以武侠和仙侠为题材的单机角色扮演游戏。系列首款作品发行于1995年7月，荣获两岸当时无数的游戏奖项，还被众多玩家誉为“旷世奇作”，初代及三代还相继于2004年和2008年被改编成电视剧。<br>评语：<a href="/2017/06/18/xianjianqixiazhuan/">《仙剑奇侠传》- 少年郎，就当鲜衣怒马仗剑天涯</a></p>
 </blockquote>
 <h2 id="NO-3-《文明6-Sid-Meier’s-Civilization-VI》"><a href="#NO-3-《文明6-Sid-Meier’s-Civilization-VI》" class="headerlink" title="NO.3 《文明6 Sid Meier’s Civilization VI》"></a>NO.3 《文明6 Sid Meier’s Civilization VI》</h2><blockquote>
-<p><img src="https://img9.doubanio.com/lpic/s28716454.jpg" srcset="/img/loading.gif" alt="文明6"><br>类别：策略<br>平台：PC<br>简介：《文明6》是Firaxis Games开发，2K Games发行的历史策略回合制游戏，于2016年10月21日发行PC版本，2018年11月16日登陆Switch平台，2019年11月22日发布了XboxOne、PS4版本。该游戏是游戏设计师席德·梅尔创作的《文明》系列第6部。游戏中玩家建立起一个帝国，并接受时间的考验。玩家将创建及带领自己的文明从石器时代迈向信息时代，并成为世界的领导者。在尝试建立起世界上赫赫有名的伟大文明的过程中，玩家将启动战争、实行外交、促进文化，同时正面对抗历史上的众多领袖。<br>评语：<strong>再来一回合！</strong></p>
+<p><img src="https://img9.doubanio.com/lpic/s28716454.jpg" srcset="/img/loading.gif" alt="文明6"><br>类别：策略<br>平台：PC<br>简介：《文明6》是Firaxis Games开发，2K Games发行的历史策略回合制游戏，于2016年10月21日发行PC版本，2018年11月16日登陆Switch平台，2019年11月22日发布了XboxOne、PS4版本。该游戏是游戏设计师席德·梅尔创作的《文明》系列第6部。游戏中玩家建立起一个帝国，并接受时间的考验。玩家将创建及带领自己的文明从石器时代迈向信息时代，并成为世界的领导者。在尝试建立起世界上赫赫有名的伟大文明的过程中，玩家将启动战争、实行外交、促进文化，同时正面对抗历史上的众多领袖。<br>评语：<code>再来一回合！</code></p>
 </blockquote>
 <h2 id="NO-4-《三国志11威力加强版-三國志11-with-パワーアップキット》"><a href="#NO-4-《三国志11威力加强版-三國志11-with-パワーアップキット》" class="headerlink" title="NO.4 《三国志11威力加强版 三國志11 with パワーアップキット》"></a>NO.4 《三国志11威力加强版 三國志11 with パワーアップキット》</h2><blockquote>
-<p><img src="https://img1.doubanio.com/lpic/s29350398.jpg" srcset="/img/loading.gif" alt="三国志11"><br>类别：策略<br>平台：PC<br>简介：《三国志11 威力加强版》是日本光荣公司的系列历史模拟游戏“三国志”之一，是《三国志11》的扩充强化版本，让已持有《三国志11》的玩家可以享受到更丰富的游戏内容。《三国志11 威力加强版》于2007年1月25日上市。 《三国志11》繁体中文版在2006年7月发售之后，光荣根据玩家们所提供的宝贵意见，新增了许多内容，可以让玩家更深入地体验到《三国志11》的乐趣。因为新设施与吸收合并系统的新增追加，让内政更具战略性，而能力研究系统则让玩家在培养部下之后，也能与其他强国分庭抗礼、一争天下。<br>评语：<strong>匡扶汉室、一统天下</strong></p>
+<p><img src="https://img1.doubanio.com/lpic/s29350398.jpg" srcset="/img/loading.gif" alt="三国志11"><br>类别：策略<br>平台：PC<br>简介：《三国志11 威力加强版》是日本光荣公司的系列历史模拟游戏“三国志”之一，是《三国志11》的扩充强化版本，让已持有《三国志11》的玩家可以享受到更丰富的游戏内容。《三国志11 威力加强版》于2007年1月25日上市。 《三国志11》繁体中文版在2006年7月发售之后，光荣根据玩家们所提供的宝贵意见，新增了许多内容，可以让玩家更深入地体验到《三国志11》的乐趣。因为新设施与吸收合并系统的新增追加，让内政更具战略性，而能力研究系统则让玩家在培养部下之后，也能与其他强国分庭抗礼、一争天下。<br>评语：<code>匡扶汉室、一统天下</code></p>
 </blockquote>
 <h2 id="NO-5-《大航海时代4-大航海時代IV-PORTO-ESTADO》"><a href="#NO-5-《大航海时代4-大航海時代IV-PORTO-ESTADO》" class="headerlink" title="NO.5 《大航海时代4 大航海時代IV PORTO ESTADO》"></a>NO.5 《大航海时代4 大航海時代IV PORTO ESTADO》</h2><blockquote>
-<p><img src="https://img3.doubanio.com/lpic/s33447410.jpg" srcset="/img/loading.gif" alt="大航海时代4"><br>类别：角色扮演<br>平台：PSP<br>简介：《大航海时代4》是日本Koei公司1999年推出的经典单机游戏，是《大航海时代》系列第4部作品，后来又产生多个加强版本。游戏中加深了对于当时欧洲殖民扩张与殖民贸易的描写，诸如签订契约、独占贸易港、建立贸易航路、四处探险发现财宝特产等，无不折射出那个年代特殊的历史背景。第4代可操作人物是4位（威力加强版中又增加了3位），游戏遍布于世界的各个角落，而不再继续以欧洲为世界观的中心。<br>评语：<strong>向着大海进发！</strong></p>
+<p><img src="https://img3.doubanio.com/lpic/s33447410.jpg" srcset="/img/loading.gif" alt="大航海时代4"><br>类别：角色扮演<br>平台：PSP<br>简介：《大航海时代4》是日本Koei公司1999年推出的经典单机游戏，是《大航海时代》系列第4部作品，后来又产生多个加强版本。游戏中加深了对于当时欧洲殖民扩张与殖民贸易的描写，诸如签订契约、独占贸易港、建立贸易航路、四处探险发现财宝特产等，无不折射出那个年代特殊的历史背景。第4代可操作人物是4位（威力加强版中又增加了3位），游戏遍布于世界的各个角落，而不再继续以欧洲为世界观的中心。<br>评语：<code>向着大海进发！</code></p>
 </blockquote>
 <h2 id="NO-6-《孢子-Spore》"><a href="#NO-6-《孢子-Spore》" class="headerlink" title="NO.6 《孢子 Spore》"></a>NO.6 《孢子 Spore》</h2><blockquote>
-<p><img src="https://img3.doubanio.com/lpic/s9109893.jpg" srcset="/img/loading.gif" alt="文明6"><br>类别：模拟<br>平台：PC<br>简介：《孢子》是由Maxis开发的一款模拟类游戏，于2008年9月7日美国艺电发行。 玩家最初扮演一个单细胞逐步进化成太空文明角色，游戏里玩家可以打造属于自己的世界，包含冒险、探索、创造等元素。<br>评语：<strong>生命不息，进化不止</strong></p>
+<p><img src="https://img3.doubanio.com/lpic/s9109893.jpg" srcset="/img/loading.gif" alt="文明6"><br>类别：模拟<br>平台：PC<br>简介：《孢子》是由Maxis开发的一款模拟类游戏，于2008年9月7日美国艺电发行。 玩家最初扮演一个单细胞逐步进化成太空文明角色，游戏里玩家可以打造属于自己的世界，包含冒险、探索、创造等元素。<br>评语：<code>生命不息，进化不止</code></p>
 </blockquote>
 <h2 id="NO-7-《帝国时代3：亚洲王朝-Age-of-Empires-III-The-Asian-Dynasties》"><a href="#NO-7-《帝国时代3：亚洲王朝-Age-of-Empires-III-The-Asian-Dynasties》" class="headerlink" title="NO.7 《帝国时代3：亚洲王朝 Age of Empires III: The Asian Dynasties》"></a>NO.7 《帝国时代3：亚洲王朝 Age of Empires III: The Asian Dynasties》</h2><blockquote>
-<p><img src="https://img3.doubanio.com/lpic/s28270740.jpg" srcset="/img/loading.gif" alt="帝国时代3"><br>类别：即时战略<br>平台：PC<br>简介：《帝国时代3：亚洲王朝》(Age of Empires III The Asian Dynasties)是一款由Big Huge Games，Microsoft开发制作的即时战略类游戏，于2007年10月25日发行。该游戏将把玩家从原作中殖民美洲的故事带入全新的东方世界之中。在游戏中，玩家将有幸选择扮演中国、日本以及印度三支亚洲文明抵御欧洲力量的入侵，或者相互交恶。全新的三支文明、15种新增奇迹、随机游戏地图、全新游戏角色以及更具加精彩的单人战役，将为玩家展现亚洲帝国的崛起之路。<br>评语：<strong>一切为了帝国的荣耀！</strong></p>
+<p><img src="https://img3.doubanio.com/lpic/s28270740.jpg" srcset="/img/loading.gif" alt="帝国时代3"><br>类别：即时战略<br>平台：PC<br>简介：《帝国时代3：亚洲王朝》(Age of Empires III The Asian Dynasties)是一款由Big Huge Games，Microsoft开发制作的即时战略类游戏，于2007年10月25日发行。该游戏将把玩家从原作中殖民美洲的故事带入全新的东方世界之中。在游戏中，玩家将有幸选择扮演中国、日本以及印度三支亚洲文明抵御欧洲力量的入侵，或者相互交恶。全新的三支文明、15种新增奇迹、随机游戏地图、全新游戏角色以及更具加精彩的单人战役，将为玩家展现亚洲帝国的崛起之路。<br>评语：<code>一切为了帝国的荣耀！</code></p>
 </blockquote>
 <h2 id="NO-8-《拳皇97-The-King-of-Fighters-‘97》"><a href="#NO-8-《拳皇97-The-King-of-Fighters-‘97》" class="headerlink" title="NO.8 《拳皇97 The King of Fighters ‘97》"></a>NO.8 《拳皇97 The King of Fighters ‘97》</h2><blockquote>
-<p><img src="https://img9.doubanio.com/lpic/s29294156.jpg" srcset="/img/loading.gif" alt="拳皇97"><br>类别：格斗<br>平台：Arcade/街机<br>简介：《拳皇97》是由日本SNK公司于1997年发行的一款街机格斗游戏。该作为《拳皇96》的续作，其后续作品为《拳皇98》。该作相比拳皇系列前三个版本在各方面均有较大改进，是拳皇系列的成熟之作。《拳皇97》是“大蛇篇”三部曲中的最后一章，讲述了各路决斗家组成队伍参加拳皇大赛，卷入八杰集复活大蛇的阴谋，并最终为这场因缘之战画上休止符。<br>评语：<strong>K.O.</strong></p>
+<p><img src="https://img9.doubanio.com/lpic/s29294156.jpg" srcset="/img/loading.gif" alt="拳皇97"><br>类别：格斗<br>平台：Arcade/街机<br>简介：《拳皇97》是由日本SNK公司于1997年发行的一款街机格斗游戏。该作为《拳皇96》的续作，其后续作品为《拳皇98》。该作相比拳皇系列前三个版本在各方面均有较大改进，是拳皇系列的成熟之作。《拳皇97》是“大蛇篇”三部曲中的最后一章，讲述了各路决斗家组成队伍参加拳皇大赛，卷入八杰集复活大蛇的阴谋，并最终为这场因缘之战画上休止符。<br>评语：<code>K.O.</code></p>
 </blockquote>
 <h2 id="NO-9-《梦幻西游》"><a href="#NO-9-《梦幻西游》" class="headerlink" title="NO.9 《梦幻西游》"></a>NO.9 《梦幻西游》</h2><blockquote>
-<p><img src="https://img1.doubanio.com/lpic/s29306909.jpg" srcset="/img/loading.gif" alt="梦幻西游"><br>类别：角色扮演<br>平台：PC<br>简介：《梦幻西游》是一款2003年由中国网易公司自行开发并营运的网络游戏。游戏以著名的章回小说《西游记》故事为背景，透过Q版的人物，试图营造出浪漫的网络游戏风格。<br>评语：<strong>建邺城，东海湾，大海龟，剑侠客。</strong></p>
+<p><img src="https://img1.doubanio.com/lpic/s29306909.jpg" srcset="/img/loading.gif" alt="梦幻西游"><br>类别：角色扮演<br>平台：PC<br>简介：《梦幻西游》是一款2003年由中国网易公司自行开发并营运的网络游戏。游戏以著名的章回小说《西游记》故事为背景，透过Q版的人物，试图营造出浪漫的网络游戏风格。<br>评语：<code>建邺城，东海湾，大海龟，剑侠客。</code></p>
 </blockquote>
 <h2 id="NO-10-《魂斗罗-Contra》"><a href="#NO-10-《魂斗罗-Contra》" class="headerlink" title="NO.10 《魂斗罗 Contra》"></a>NO.10 《魂斗罗 Contra》</h2><blockquote>
-<p><img src="https://img3.doubanio.com/lpic/s29054993.jpg" srcset="/img/loading.gif" alt="魂斗罗"><br>类别：动作<br>平台：FC<br>简介：《魂斗罗》（Contra）是Konami于1987年开始在大型游戏机，家庭主机，家用电脑上推出的一款横向卷轴射击游戏。魂斗罗的故事背景是根据著名恐怖片《异形》（Alien）改编，人物造型是著名影星施瓦辛格和史泰龙。1987年第一款魂斗罗诞生在名为Jamma的大型游戏机上。<br>评语：<strong>↑↑↓↓←→←→BABA</strong></p>
+<p><img src="https://img3.doubanio.com/lpic/s29054993.jpg" srcset="/img/loading.gif" alt="魂斗罗"><br>类别：动作<br>平台：FC<br>简介：《魂斗罗》（Contra）是Konami于1987年开始在大型游戏机，家庭主机，家用电脑上推出的一款横向卷轴射击游戏。魂斗罗的故事背景是根据著名恐怖片《异形》（Alien）改编，人物造型是著名影星施瓦辛格和史泰龙。1987年第一款魂斗罗诞生在名为Jamma的大型游戏机上。<br>评语：<code>↑↑↓↓←→←→BABA</code></p>
 </blockquote>
 <h3 id="点击查看更多游戏"><a href="#点击查看更多游戏" class="headerlink" title="点击查看更多游戏"></a><a href="https://www.douban.com/people/186027750/games?action=collect" target="_blank" rel="noopener">点击查看更多游戏</a></h3></div>
 <style>
@@ -349,5 +380,5 @@
 
 
 
-</body>
+  </body>
 </html>

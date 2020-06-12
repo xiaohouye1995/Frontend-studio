@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -211,8 +242,11 @@
         
           
         
-        <div>“要有梦想，想成为英雄的话，就一定要有梦想。”——扎克斯《最终幻想》
-对于绝大多数的游戏玩家来说，《最终幻想》是一个始终无法跨越的话题。也许你并没有玩过这个系列的任何一款游戏，但是你至少听过他。作为一款1987年发布的游戏，《最终幻想》系列已经走过了29个年头，发布了15部正版续作。最终幻想虽然取名为最终，但实际上它一直都没有结束或者说是放弃，属于幻想的故事一直在延续。而近日上线的《最终幻想觉醒》</div>
+        <div>
+恰饭向，谨慎食用
+
+“要有梦想，想成为英雄的话，就一定要有梦想。”——扎克斯《最终幻想》
+对于绝大多数的游戏玩家来说，《最终幻想》是一个始终无法跨越的话题。也许你并没有玩过这个系列的任何一款游戏，但是你至少听过他。作为一款1987年发布的游戏，《最终幻想》系列已经走过了29个年头，发布了15部正版续作。最终幻想虽然取名为最终，但实际上它一直都没有结束或者说是放弃，属于幻想的故事一直在延续。而近日</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -238,6 +272,53 @@
               <a href="/tags/%E8%AF%84%E6%B5%8B/">评测</a>
             
               <a href="/tags/%E6%9C%80%E7%BB%88%E5%B9%BB%E6%83%B3/">最终幻想</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2016/12/25/2016122501/">《追光者2》评测：虐心之作 手残勿进</a>
+
+      <a href="/2016/12/25/2016122501/" class="index-excerpt">
+        
+        
+          
+        
+        <div>苹果商店的新游推荐了一款名为《追光者2》的手游。苹果编辑推荐的游戏，质量上还是很有保障的，于是便下载试玩了一下。首先需要声明的是，因为之前并没有玩过前作《追光者》，所以在看到《追光者2》官方介绍上虐心、慎入、黑暗这些字眼时，让人觉得这是一款情节感人、偏向暗黑的虐心游戏。但事实上，当进入游戏后，才发现这款游戏不只虐心更虐手。
+
+“黑夜给了我一双黑色的眼睛，而我却用它来寻找光明。”
+如果要给这款游戏的</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2016-12-25
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/">游戏杂谈</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+            
+              <a href="/tags/%E8%AF%84%E6%B5%8B/">评测</a>
+            
+              <a href="/tags/%E8%BF%BD%E5%85%89%E8%80%85/">追光者</a>
             
           </div>
         
@@ -587,47 +668,6 @@ bootstrap
     </div>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2015/06/16/2015061601/">奔跑</a>
-
-      <a href="/2015/06/16/2015061601/" class="index-excerpt">
-        
-        
-          
-        
-        <div>每一次的低头
-都是沉默的坚强
-一次次的抬头
-奋发出青春的力量
-每一次的微笑
-都是优雅的风度
-一次次的狰狞
-呐喊出前进的方向
-</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2015-06-16
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/">诗词歌赋</a>
-            
-          </div>
-        
-        
-      </div>
-    </div>
-  </div>
-
 
 
   <nav aria-label="navigation">
@@ -792,5 +832,5 @@ bootstrap
 
 
 
-</body>
+  </body>
 </html>

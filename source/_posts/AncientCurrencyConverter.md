@@ -67,9 +67,9 @@ tags:
 - [ ] 改名：五千年风华
 - [ ] 历史今日
 
-## 技巧
+## 填坑
 ### css绝对定位(absolute)居中方法
-```
+```css
 .panel {
     position: absolute;
     top: 50%;

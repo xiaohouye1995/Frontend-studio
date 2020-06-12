@@ -11,9 +11,9 @@
 # 全局
 # Site
 #---------------------------
-favicon: /img/favicon.png # 网站标签页的 icon
+favicon: /img/favicon.jpg # 网站标签页的 icon
 
-apple_touch_icon: /img/apple-touch-icon.png # 用于苹果设备的 icon
+apple_touch_icon: /img/apple-touch-icon.jpg # 用于苹果设备的 icon
 
 title_join_string: ' - '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 
@@ -21,8 +21,8 @@ force_https: false  # 强制所有链接升级为 HTTPS（适用于图片等资�
 
 highlight: # 代码高亮
   enable: true
-  style: 'Github Gist'  # 高亮样式见：https://highlightjs.org/static/demo/  在页面挑选 style 填入
-  bg_color: false  # 是否根据 style 改变代码背景色，如果 style 是白色背景最好关闭此项
+  style: 'vs2015'  # 高亮样式见：https://highlightjs.org/static/demo/  在页面挑选 style 填入
+  bg_color: true  # 是否根据 style 改变代码背景色，如果 style 是白色背景最好关闭此项
   copy_btn: true  # 是否开启复制代码的按钮
 
 fun_features: # 一些好玩的功能
@@ -60,7 +60,7 @@ font:  # 主题字体配置
   code_font_size: 85%               # 代码的字号
 
 custom_js:   # 指定自定义 js 文件路径，路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js，支持列表
-custom_css:   # 指定自定义 css 文件路径，路径是相对 source 目录，如 /css/custom.css 同上，支持列表
+custom_css: /css/dark.css  # 指定自定义 css 文件路径，路径是相对 source 目录，如 /css/custom.css 同上，支持列表
 custom_html: ''  # 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突
 
 web_analytics:  # 网页访问统计
@@ -351,7 +351,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: '旧游无处不堪寻。无寻处，惟有少年心。' # 打字机内容
-  avatar: /img/avatar.png # 头像
+  avatar: https://frontend-studio-1256354221.file.myqcloud.com/img/avatar.jpg # 头像
   name: 小侯爷
   introduce: 菜鸟程序猿 / 手残游戏宅 / 萌新阿婆主 # 支持 HTML
   icons: # 更多图标可从 https://github.com/fluid-dev/static/blob/master/hexo-theme-fluid/iconfont.png 查找，class 代表图标的 css class
@@ -359,7 +359,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
     - { class: 'iconfont icon-douban-fill', link: 'https://www.douban.com/people/186027750/games?action=collect' }
     # - { class: 'iconfont icon-weibo-fill', link: 'https://weibo.com/5736438053' }
     - { class: 'iconfont icon-bilibili', link: 'https://space.bilibili.com/98212134' }
-    # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.png' }  # 添加 qrcode 后，点击不再跳转，而是悬浮二维码，需要指定 image
+    # - { class: 'iconfont icon-wechat-fill', qrcode: '/img/favicon.jpg' }  # 添加 qrcode 后，点击不再跳转，而是悬浮二维码，需要指定 image
 
 
 #---------------------------
@@ -387,17 +387,17 @@ links:
       title: 'Fluid Docs',
       intro: '主题使用指南',
       link: 'https://hexo.fluid-dev.com/docs/',
-      image: '/img/favicon.png'
+      image: '/img/favicon.jpg'
     }
     - {
       title: 'Fluid Repo',
       intro: '主题 GitHub 仓库',
       link: 'https://github.com/fluid-dev/hexo-theme-fluid',
-      image: '/img/favicon.png'
+      image: '/img/favicon.jpg'
     }
     - {
       title: 'Fluid Example',
       intro: '主题操作示例',
       link: 'https://hexo.fluid-dev.com/docs/example/',
-      image: '/img/favicon.png'
+      image: '/img/favicon.jpg'
     }

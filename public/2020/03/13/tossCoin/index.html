@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -153,7 +184,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    17
+                    16
                      分钟
                   </span>
                 
@@ -249,13 +280,13 @@
 <h3 id="导入字体文件后，报错，影响界面渲染"><a href="#导入字体文件后，报错，影响界面渲染" class="headerlink" title="导入字体文件后，报错，影响界面渲染"></a>导入字体文件后，报错，影响界面渲染</h3><p>现象：小程序真机运行下，界面内容显示不全</p>
 <p>原因：导入字体文件后，报错，影响界面渲染</p>
 <p>解决：修改导入字体方式，如下：</p>
-<pre><code class="hljs plain">把iconfont.css 的全部代码 全部复制到App.vue文件style里
+<div class="hljs"><pre><code class="hljs plain">把iconfont.css 的全部代码 全部复制到App.vue文件style里
 或者（在static目录下创建一个css文件，在main.js引入即可 import &quot;.&#x2F;static&#x2F;icon-font&#x2F;iconfont.css&quot;）
 然后 删除 src: url(&#39;iconfont.eot?t&#x3D;1562306471309&#39;); &#x2F; IE9 &#x2F;
 url(&#39;iconfont.woff?t&#x3D;1562306471309&#39;) format(&#39;woff&#39;),
 url(&#39;iconfont.ttf?t&#x3D;1562306471309&#39;) format(&#39;truetype&#39;), &#x2F; chrome, firefox, opera, Safari, Android, iOS 4.2+ &#x2F;
 url(&#39;iconfont.svg?t&#x3D;1562306471309#iconfont&#39;) format(&#39;svg&#39;); &#x2F; iOS 4.1- &#x2F;
-只保留转为base64的 woff2的即可</code></pre>
+只保留转为base64的 woff2的即可</code></pre></div>
 <h3 id="硬币旋转的音效延迟"><a href="#硬币旋转的音效延迟" class="headerlink" title="硬币旋转的音效延迟"></a>硬币旋转的音效延迟</h3><p>现象：硬币旋转的音效延迟</p>
 <p>原因：音效加载时间长，加上音频文件较大，而且需要网络下载</p>
 <p>解决：使用 onPlay() 方法，等待音频加载后再旋转硬币，另外压缩音频文件体积，并放入本地文件中</p>
@@ -265,14 +296,14 @@ url(&#39;iconfont.svg?t&#x3D;1562306471309#iconfont&#39;) format(&#39;svg&#39;);
 <h3 id="“navigationBarTextStyle”-“black”-属性在支付宝小程序中无效"><a href="#“navigationBarTextStyle”-“black”-属性在支付宝小程序中无效" class="headerlink" title="“navigationBarTextStyle”: “black” 属性在支付宝小程序中无效"></a>“navigationBarTextStyle”: “black” 属性在支付宝小程序中无效</h3><p>现象：”navigationBarTextStyle”: “black” 属性在支付宝小程序中无效</p>
 <p>原因：支付宝小程序文字颜色和标题前景色共用一个属性</p>
 <p>解决：navigationBarBackgroundColor属性不在支付宝小程序中使用</p>
-<pre><code class="hljs plain">&quot;globalStyle&quot;: &#123;
-	&quot;navigationBarTextStyle&quot;: &quot;black&quot;,
-	&quot;navigationBarTitleText&quot;: &quot;来抛硬币&quot;,
-	&#x2F;&#x2F; #ifdef MP-WEIXIN
-	&quot;navigationBarBackgroundColor&quot;: &quot;#f8f8f8&quot;,
-	&#x2F;&#x2F; #endif
-	&quot;backgroundColor&quot;: &quot;#f7f8fa&quot;
-&#125;</code></pre>
+<div class="hljs"><pre><code class="hljs css">"<span class="hljs-selector-tag">globalStyle</span>": &#123;
+	"navigationBarTextStyle": "black",
+	"<span class="hljs-selector-tag">navigationBarTitleText</span>": "来抛硬币",
+	// #ifdef MP-WEIXIN
+	"<span class="hljs-selector-tag">navigationBarBackgroundColor</span>": "<span class="hljs-selector-id">#f8f8f8</span>",
+	// #endif
+	"<span class="hljs-selector-tag">backgroundColor</span>": "<span class="hljs-selector-id">#f7f8fa</span>"
+&#125;</code></pre></div>
 
 <h3 id="支付宝小程序页面不能自适应高度"><a href="#支付宝小程序页面不能自适应高度" class="headerlink" title="支付宝小程序页面不能自适应高度"></a>支付宝小程序页面不能自适应高度</h3><p>现象：支付宝小程序页面不能自适应高度</p>
 <p>原因：支付宝小程序 没有 page 根元素标签</p>
@@ -281,35 +312,35 @@ url(&#39;iconfont.svg?t&#x3D;1562306471309#iconfont&#39;) format(&#39;svg&#39;);
 <p>原因：直接访问COS的域名，是不会经过CDN</p>
 <p>解决：修改cos域名地址为CDN地址</p>
 <h3 id="本地修改json数据"><a href="#本地修改json数据" class="headerlink" title="本地修改json数据"></a>本地修改json数据</h3><p>暂时未找到方法，改为使用 setStorageSync 将json中需要修改的数据id存入本地缓存，再进入页面读取json数据时，通过双重循环来修改数据</p>
-<pre><code class="hljs plain">import coinJson from &#39;..&#x2F;..&#x2F;static&#x2F;json&#x2F;coin.json&#39;
-&#x2F;&#x2F; 获取硬币列表
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">import</span> coinJson <span class="hljs-keyword">from</span> <span class="hljs-string">'../../static/json/coin.json'</span>
+<span class="hljs-comment">// 获取硬币列表</span>
 getCoinList() &#123;
-	this.coins &#x3D; coinJson.data
-	let unlockList &#x3D; uni.getStorageSync(&#39;unlockList&#39;) || [];
-	for (let item of this.coins[1].list) &#123;
-		for (let item2 of unlockList) &#123;
-			if (item.value &#x3D;&#x3D;&#x3D; item2) &#123;
-				item.status &#x3D; true
+	<span class="hljs-keyword">this</span>.coins = coinJson.data
+	<span class="hljs-keyword">let</span> unlockList = uni.getStorageSync(<span class="hljs-string">'unlockList'</span>) || [];
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> <span class="hljs-keyword">this</span>.coins[<span class="hljs-number">1</span>].list) &#123;
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item2 <span class="hljs-keyword">of</span> unlockList) &#123;
+			<span class="hljs-keyword">if</span> (item.value === item2) &#123;
+				item.status = <span class="hljs-literal">true</span>
 			&#125;
 		&#125;
 	&#125;
 &#125;,
-&#x2F;&#x2F; 解锁硬币皮肤
+<span class="hljs-comment">// 解锁硬币皮肤</span>
 unlockCoin() &#123;
-	let unlockList &#x3D; uni.getStorageSync(&#39;unlockList&#39;) || [];
-    unlockList.push(this.coinid)
-    uni.setStorageSync(&#39;unlockList&#39;, unlockList);
-&#125;,</code></pre>
+	<span class="hljs-keyword">let</span> unlockList = uni.getStorageSync(<span class="hljs-string">'unlockList'</span>) || [];
+    unlockList.push(<span class="hljs-keyword">this</span>.coinid)
+    uni.setStorageSync(<span class="hljs-string">'unlockList'</span>, unlockList);
+&#125;,</code></pre></div>
 
-<h3 id="css绝对定位居中"><a href="#css绝对定位居中" class="headerlink" title="css绝对定位居中"></a>css绝对定位居中</h3><pre><code class="hljs plain">.conter&#123;
-    width: 600px; height: 400px;
-    position: absolute; left: 50%; top: 50%;
-    transform: translate(-50%, -50%);    &#x2F;* 50%为自身尺寸的一半 *&#x2F;
-&#125;</code></pre>
+<h3 id="css绝对定位居中"><a href="#css绝对定位居中" class="headerlink" title="css绝对定位居中"></a>css绝对定位居中</h3><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.conter</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>; <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">position</span>: absolute; <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>; <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);    <span class="hljs-comment">/* 50%为自身尺寸的一半 */</span>
+&#125;</code></pre></div>
 
-<h3 id="css灰度滤镜"><a href="#css灰度滤镜" class="headerlink" title="css灰度滤镜"></a>css灰度滤镜</h3><pre><code class="hljs plain">div &#123;
-    filter: grayscale(100%);
-&#125;</code></pre>
+<h3 id="css灰度滤镜"><a href="#css灰度滤镜" class="headerlink" title="css灰度滤镜"></a>css灰度滤镜</h3><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;
+    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">grayscale</span>(<span class="hljs-number">100%</span>);
+&#125;</code></pre></div>
             </article>
             <hr>
             <div>
@@ -601,5 +632,5 @@ unlockCoin() &#123;
 
 
 
-</body>
+  </body>
 </html>

@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -41,11 +41,42 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -149,7 +180,7 @@
                 
 
 <div class="text-center tagcloud">
-  <a href="/tags/APP/" style="font-size: 15px; color: #bbe">APP</a> <a href="/tags/MUI/" style="font-size: 15px; color: #bbe">MUI</a> <a href="/tags/VScode/" style="font-size: 15px; color: #bbe">VScode</a> <a href="/tags/Valine/" style="font-size: 15px; color: #bbe">Valine</a> <a href="/tags/Xcode9/" style="font-size: 15px; color: #bbe">Xcode9</a> <a href="/tags/android/" style="font-size: 15px; color: #bbe">android</a> <a href="/tags/bootstrap/" style="font-size: 15px; color: #bbe">bootstrap</a> <a href="/tags/fancybox/" style="font-size: 15px; color: #bbe">fancybox</a> <a href="/tags/hexo/" style="font-size: 15px; color: #bbe">hexo</a> <a href="/tags/iOS/" style="font-size: 15px; color: #bbe">iOS</a> <a href="/tags/jQuery/" style="font-size: 15px; color: #bbe">jQuery</a> <a href="/tags/mui/" style="font-size: 15px; color: #bbe">mui</a> <a href="/tags/uni-app/" style="font-size: 20px; color: #8ea5dc">uni-app</a> <a href="/tags/vue/" style="font-size: 25px; color: #6090c9">vue</a> <a href="/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/" style="font-size: 15px; color: #bbe">仙剑奇侠传</a> <a href="/tags/%E5%86%92%E9%99%A9%E6%9D%91%E7%89%A9%E8%AF%AD/" style="font-size: 15px; color: #bbe">冒险村物语</a> <a href="/tags/%E5%8B%87%E8%80%85/" style="font-size: 25px; color: #6090c9">勇者</a> <a href="/tags/%E5%8D%97%E4%BA%AC/" style="font-size: 15px; color: #bbe">南京</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 15px; color: #bbe">博客</a> <a href="/tags/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4/" style="font-size: 15px; color: #bbe">塞尔达传说</a> <a href="/tags/%E5%BC%80%E5%8F%91%E4%B8%96%E7%95%8C/" style="font-size: 15px; color: #bbe">开发世界</a> <a href="/tags/%E6%9C%80%E7%BB%88%E5%B9%BB%E6%83%B3/" style="font-size: 15px; color: #bbe">最终幻想</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 30px; color: #337ab7">游戏</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 15px; color: #bbe">电影</a> <a href="/tags/%E7%BB%8F%E8%90%A5/" style="font-size: 15px; color: #bbe">经营</a> <a href="/tags/%E8%A5%BF%E6%B9%96/" style="font-size: 15px; color: #bbe">西湖</a> <a href="/tags/%E8%AF%84%E6%B5%8B/" style="font-size: 30px; color: #337ab7">评测</a> <a href="/tags/%E9%81%97%E8%90%BD%E6%88%98%E5%A2%83/" style="font-size: 15px; color: #bbe">遗落战境</a>
+  <a href="/tags/APP/" style="font-size: 15px; color: #bbe">APP</a> <a href="/tags/MUI/" style="font-size: 15px; color: #bbe">MUI</a> <a href="/tags/VScode/" style="font-size: 15px; color: #bbe">VScode</a> <a href="/tags/Valine/" style="font-size: 15px; color: #bbe">Valine</a> <a href="/tags/Xcode9/" style="font-size: 15px; color: #bbe">Xcode9</a> <a href="/tags/android/" style="font-size: 15px; color: #bbe">android</a> <a href="/tags/bootstrap/" style="font-size: 15px; color: #bbe">bootstrap</a> <a href="/tags/fancybox/" style="font-size: 15px; color: #bbe">fancybox</a> <a href="/tags/hexo/" style="font-size: 15px; color: #bbe">hexo</a> <a href="/tags/iOS/" style="font-size: 15px; color: #bbe">iOS</a> <a href="/tags/jQuery/" style="font-size: 15px; color: #bbe">jQuery</a> <a href="/tags/mui/" style="font-size: 15px; color: #bbe">mui</a> <a href="/tags/uni-app/" style="font-size: 20px; color: #8ea5dc">uni-app</a> <a href="/tags/vue/" style="font-size: 25px; color: #6090c9">vue</a> <a href="/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/" style="font-size: 15px; color: #bbe">仙剑奇侠传</a> <a href="/tags/%E5%86%92%E9%99%A9%E6%9D%91%E7%89%A9%E8%AF%AD/" style="font-size: 15px; color: #bbe">冒险村物语</a> <a href="/tags/%E5%8B%87%E8%80%85/" style="font-size: 25px; color: #6090c9">勇者</a> <a href="/tags/%E5%8D%97%E4%BA%AC/" style="font-size: 15px; color: #bbe">南京</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 15px; color: #bbe">博客</a> <a href="/tags/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4/" style="font-size: 15px; color: #bbe">塞尔达传说</a> <a href="/tags/%E5%BC%80%E5%8F%91%E4%B8%96%E7%95%8C/" style="font-size: 15px; color: #bbe">开发世界</a> <a href="/tags/%E6%9C%80%E7%BB%88%E5%B9%BB%E6%83%B3/" style="font-size: 15px; color: #bbe">最终幻想</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 30px; color: #337ab7">游戏</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 15px; color: #bbe">电影</a> <a href="/tags/%E7%BB%8F%E8%90%A5/" style="font-size: 15px; color: #bbe">经营</a> <a href="/tags/%E8%A5%BF%E6%B9%96/" style="font-size: 15px; color: #bbe">西湖</a> <a href="/tags/%E8%AF%84%E6%B5%8B/" style="font-size: 30px; color: #337ab7">评测</a> <a href="/tags/%E8%BF%BD%E5%85%89%E8%80%85/" style="font-size: 15px; color: #bbe">追光者</a> <a href="/tags/%E9%81%97%E8%90%BD%E6%88%98%E5%A2%83/" style="font-size: 15px; color: #bbe">遗落战境</a>
 </div>
 
               </div>
@@ -300,5 +331,5 @@
 
 
 
-</body>
+  </body>
 </html>
