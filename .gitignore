@@ -1,10 +1,10 @@
 # Compiled class file
 *.class
 
-node_modules
+node_modules/
 .idea
 dist
-
+.deploy_git
 
 # Log file
 *.log

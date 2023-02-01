@@ -102,13 +102,13 @@ version:  # 版本相关
 navbar:
   blog_title: 小侯爷的前端画室 # 导航栏左侧的标题，为空则按 hexo config.title 显示
   menu:  # 可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
-    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
-    # - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
-    - { key: 'demo', link: '/demo/', icon: 'iconfont icon-exp-fill' }
+    - { key: 'home', link: '/index/', icon: 'iconfont icon-home-fill' }
+    # - { key: 'demo', link: '/demo/', icon: 'iconfont icon-exp-fill' }
     # - { key: 'category', link: '/categories/', icon: 'iconfont icon-category-fill' }
     # - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
     - { key: 'game', link: '/game/', icon: 'iconfont icon-switch-fill' }
     - { key: 'photo', link: '/photo/', icon: 'iconfont icon-images' }
+    - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
     #- { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }  # 友链页，把前面#去掉即可展示
 
@@ -257,8 +257,8 @@ gitalk:
   clientID:                    # GitHub Application Client ID
   clientSecret:               # GitHub Application Client Secret
   repo: xiaohouye1995/Frontend-studio                       # The repo to store comments
-  owner: zhoixoayu1994                        # GitHub repository owner. Can be personal user or organization.
-  admin: zhoixoayu1994                       # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like "['admin']" or "['admin1','admin2']"
+  owner: zhoixoayu1995                        # GitHub repository owner. Can be personal user or organization.
+  admin: zhoixoayu1995                       # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like "['admin']" or "['admin1','admin2']"
   id: location.pathname         # The unique id of the page. Length must less than 50.
   language: zh-CN               # Localization language key, en, zh-CN and zh-TW are currently available.
   labels: "['Gitalk']"          # GitHub issue labels.
