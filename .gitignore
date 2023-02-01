@@ -5,6 +5,7 @@ node_modules/
 .idea
 dist
 .deploy_git
+public
 
 # Log file
 *.log
