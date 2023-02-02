@@ -19,11 +19,11 @@ tags:
 
 ## DEMO
 
-![预览1](https://github.com/zhouxiaoyu1994/AncientCurrencyConverter/blob/master/readme_img/%E9%A2%84%E8%A7%881.jpg)
+![预览1](https://sns-img-hw.xhscdn.com/862b008a-7dd2-4a20-c4be-dbbdf39c2ff5?imageView2/2/h/1200/format/webp)
 
-### 微信小程序码
+## 微信小程序码
 
-![小程序码](https://github.com/zhouxiaoyu1994/AncientCurrencyConverter/blob/master/readme_img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A0%81.jpg)
+![小程序码](https://sns-img-bd.xhscdn.com/5ba64155-bbdd-2ade-862f-812b44d2c7f4?imageView2/2/w/900/format/webp)
 
 ## 运行平台
 

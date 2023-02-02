@@ -18,10 +18,10 @@ tags:
 ### 演示
 ![demo](https://frontend-studio-1256354221.file.myqcloud.com/demo/tossCoinDEMO.gif)
 
-### 微信小程序码
+## 微信小程序码
 ![微信小程序码](https://frontend-studio-1256354221.file.myqcloud.com/demo/tossCoinwxQRcode.jpg)
 
-### 支付宝小程序码
+## 支付宝小程序码
 ![支付宝小程序码](https://frontend-studio-1256354221.file.myqcloud.com/demo/tossCoinzfbQRcode.jpg)
 
 ### 开源地址：https://github.com/xiaohouye1995/tossCoin
