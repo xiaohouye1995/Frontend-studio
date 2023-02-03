@@ -6,6 +6,7 @@ node_modules/
 dist
 .deploy_git
 public
+db.json
 
 # Log file
 *.log

@@ -23,7 +23,7 @@ tags:
 
 ## 微信小程序码
 
-![小程序码](https://sns-img-bd.xhscdn.com/5ba64155-bbdd-2ade-862f-812b44d2c7f4?imageView2/2/w/900/format/webp)
+![小程序码](https://navigation-1256354221.cos.ap-shanghai.myqcloud.com/icons/QR_AncientCurrencyConverter.jpeg)
 
 ## 运行平台
 

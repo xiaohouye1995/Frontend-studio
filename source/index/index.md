@@ -5,15 +5,15 @@ banner_img_height: 100
 ---
 
 <div>
-<h2 class="home-title">兴趣使然的个人项目：</h2>
-<div class="photo-container">
-</div>
+	<h2 class="home-title">兴趣使然的个人项目：</h2>
+	<div class="photo-container"></div>
 </div>
 
 <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
 <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
 <script>
 	jQuery(document).ready(function ($) {
 		$.getJSON("data.json",function(result){
@@ -55,30 +55,21 @@ banner_img_height: 100
 		});
 	})
 </script>
+
 <style>
-@media (min-width: 576px) {
-	.container, .container-lg, .container-md, .container-sm, .container-xl {
-	    max-width: 100%;
-		padding-right: 0;
-		padding-left: 0;
-	}
-	.row{
-		margin-right: 0;
-		margin-left: 0;
-	}
+main .container{
+	max-width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+}
+main .container .row {
+	margin: 0;
 }
 #board {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 figcaption {
   display: none;
-}
-.title {
-	font-size: 26px;
-	font-weight: 700f;
-	color: #fff;
-	text-align: center;
-	margin-top: 8rem;
 }
 .photo-container {
 	font-size: 14px;
@@ -94,6 +85,9 @@ figcaption {
 	transform-style: preserve-3d;
 	cursor: pointer;
 	border-radius:50%;
+	overflow: hidden;
+	width: 140px;
+	height: 140px;
 }
 .photo {
 	position: relative;
@@ -196,6 +190,5 @@ figcaption {
 }
 .home-title {
 	color: #fff;
-	/* box-shadow: rgba(0, 0, 0, 0.66); */
 }
 </style>

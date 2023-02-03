@@ -49,16 +49,13 @@ banner_img_height: 100
 	})
 </script>
 <style>
-@media (min-width: 576px) {
-	.container, .container-lg, .container-md, .container-sm, .container-xl {
-	    max-width: 100%;
-		padding-right: 0;
-		padding-left: 0;
-	}
-	.row{
-		margin-right: 0;
-		margin-left: 0;
-	}
+main .container{
+	max-width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+}
+main .container .row {
+	margin: 0;
 }
 #board {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);

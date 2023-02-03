@@ -15,11 +15,11 @@ tags:
 
 ## 微信小程序码
 
-![小程序码](https://sns-img-hw.xhscdn.com/af972206-da82-e367-faac-34fe91c4bffe?imageView2/2/w/900/format/webp)
+![小程序码](https://food-red-black-1256354221.cos.ap-nanjing.myqcloud.com/img/redblack_QRCode.jpg)
 
 ## 运行平台
 
-- 微信小程序
+微信小程序
 
 ## 文档
 

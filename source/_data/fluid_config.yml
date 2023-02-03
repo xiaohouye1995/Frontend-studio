@@ -300,10 +300,10 @@ livere:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/banner_2.jpg
-  banner_img_height: 60  # available: 0 - 100
+  banner_img: https://frontend-studio-1256354221.file.myqcloud.com/img/demo_banner.jpg
+  banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
-  subtitle:  # 打字机内容
+  subtitle: 梦付千秋星垂野，月落长河云卷尘 # 打字机内容
   
 #---------------------------
 # 项目实验室
